@@ -2,7 +2,6 @@ class StartupsController < ApplicationController
 
   def index
     # @startup = Startup.all
-
     @startups = [
       {
         :company_name  => "Apple",
@@ -39,12 +38,11 @@ class StartupsController < ApplicationController
       }
     ]
   end
-  end
+
 
   def show
     @startup = Startup.find(params[:id])
   end
-
 
   def edit
     @startup = Startup.find(params[:id])
@@ -82,5 +80,47 @@ class StartupsController < ApplicationController
     @startup = Startup.find(params[:id])
     @startup.destroy
   end
-
 end 
+
+
+def startup0
+    @startup = {
+      :company_name  => "Apple",
+      :contact_person => "Steve Jobs",
+      :contact_person_email => "steve@apple.com",
+      :industry => "consumer electronics",
+      :city => "Palo Alto",
+      :country => "USA",
+      :number_of_employees => "60,000",
+      :logo => "N/A",
+      :banner => "N/A"
+    }
+  end
+
+  def startup1
+    @startup = {
+      :company_name  => "Apple",
+      :contact_person => "Steve Jobs",
+      :contact_person_email => "steve@apple.com",
+      :industry => "consumer electronics",
+      :city => "Palo Alto",
+      :country => "USA",
+      :number_of_employees => "60,000",
+      :logo => "N/A",
+      :banner => "N/A"
+    }
+  end
+
+  def startup2
+    @startup = {
+      :company_name  => "Apple",
+      :contact_person => "Steve Jobs",
+      :contact_person_email => "steve@apple.com",
+      :industry => "consumer electronics",
+      :city => "Palo Alto",
+      :country => "USA",
+      :number_of_employees => "60,000",
+      :logo => "N/A",
+      :banner => "N/A"
+    }
+  end
