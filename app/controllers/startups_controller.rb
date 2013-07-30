@@ -1,7 +1,44 @@
 class StartupsController < ApplicationController
 
   def index
-    @startup = Startup.all
+    # @startup = Startup.all
+
+    @startups = [
+      {
+        :company_name  => "Apple",
+        :contact_person => "Steve Jobs",
+        :contact_person_email => "steve@apple.com",
+        :industry => "consumer electronics",
+        :city => "Palo Alto",
+        :country => "USA",
+        :number_of_employees => "60,000",
+        :logo => "N/A",
+        :banner => "N/A"
+      },
+      {
+        :company_name  => "Apple",
+        :contact_person => "Steve Jobs",
+        :contact_person_email => "steve@apple.com",
+        :industry => "consumer electronics",
+        :city => "Palo Alto",
+        :country => "USA",
+        :number_of_employees => "60,000",
+        :logo => "N/A",
+        :banner => "N/A"
+      },
+      {
+        :company_name  => "Apple",
+        :contact_person => "Steve Jobs",
+        :contact_person_email => "steve@apple.com",
+        :industry => "consumer electronics",
+        :city => "Palo Alto",
+        :country => "USA",
+        :number_of_employees => "60,000",
+        :logo => "N/A",
+        :banner => "N/A"
+      }
+    ]
+  end
   end
 
   def show
