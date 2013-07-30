@@ -46,6 +46,7 @@ class StartupsController < ApplicationController
   def destroy
     @startup = Startup.find(params[:id])
     @startup.destroy
+    redirect_to startups_url
   end
 
 end 
