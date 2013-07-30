@@ -5,3 +5,38 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Startup.create!(
+  :company_name  => "Apple",
+  :contact_person => "Steve Jobs",
+  :contact_person_email => "steve@apple.com",
+  :industry => "consumer electronics",
+  :city => "Palo Alto",
+  :country => "USA",
+  :number_of_employees => "60,000",
+  :logo => "N/A",
+  :banner => "N/A"
+)
+
+Startup.create!(
+  :company_name  => "Apple",
+  :contact_person => "Steve Jobs",
+  :contact_person_email => "steve@apple.com",
+  :industry => "consumer electronics",
+  :city => "Palo Alto",
+  :country => "USA",
+  :number_of_employees => "60,000",
+  :logo => "N/A",
+  :banner => "N/A"
+)
+
+Startup.create!(
+  :company_name  => "Apple",
+  :contact_person => "Steve Jobs",
+  :contact_person_email => "steve@apple.com",
+  :industry => "consumer electronics",
+  :city => "Palo Alto",
+  :country => "USA",
+  :number_of_employees => "60,000",
+  :logo => "N/A",
+  :banner => "N/A"
+)

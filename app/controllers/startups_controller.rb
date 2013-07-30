@@ -1,83 +1,12 @@
 class StartupsController < ApplicationController
 
   def index
-    # @startup = Startup.all
-    @startups = [
-      {
-        :company_name  => "Apple",
-        :contact_person => "Steve Jobs",
-        :contact_person_email => "steve@apple.com",
-        :industry => "consumer electronics",
-        :city => "Palo Alto",
-        :country => "USA",
-        :number_of_employees => "60,000",
-        :logo => "N/A",
-        :banner => "N/A"
-      },
-      {
-        :company_name  => "Apple",
-        :contact_person => "Steve Jobs",
-        :contact_person_email => "steve@apple.com",
-        :industry => "consumer electronics",
-        :city => "Palo Alto",
-        :country => "USA",
-        :number_of_employees => "60,000",
-        :logo => "N/A",
-        :banner => "N/A"
-      },
-      {
-        :company_name  => "Apple",
-        :contact_person => "Steve Jobs",
-        :contact_person_email => "steve@apple.com",
-        :industry => "consumer electronics",
-        :city => "Palo Alto",
-        :country => "USA",
-        :number_of_employees => "60,000",
-        :logo => "N/A",
-        :banner => "N/A"
-      }
-    ]
+    @startup = Startup.all
   end
 
 
   def show
-    # @startup = Startup.find(params[:id])
-    @startups = [
-      {
-        :company_name  => "Apple",
-        :contact_person => "Steve Jobs",
-        :contact_person_email => "steve@apple.com",
-        :industry => "consumer electronics",
-        :city => "Palo Alto",
-        :country => "USA",
-        :number_of_employees => "60,000",
-        :logo => "N/A",
-        :banner => "N/A"
-      },
-      {
-        :company_name  => "Apple",
-        :contact_person => "Steve Jobs",
-        :contact_person_email => "steve@apple.com",
-        :industry => "consumer electronics",
-        :city => "Palo Alto",
-        :country => "USA",
-        :number_of_employees => "60,000",
-        :logo => "N/A",
-        :banner => "N/A"
-      },
-      {
-        :company_name  => "Apple",
-        :contact_person => "Steve Jobs",
-        :contact_person_email => "steve@apple.com",
-        :industry => "consumer electronics",
-        :city => "Palo Alto",
-        :country => "USA",
-        :number_of_employees => "60,000",
-        :logo => "N/A",
-        :banner => "N/A"
-      }
-    ]
-    @startup = @startups[params[:id].to_i]
+    @startup = Startup.find(params[:id])
   end
 
 
