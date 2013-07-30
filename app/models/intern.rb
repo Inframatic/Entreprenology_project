@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class Intern < ActiveRecord::Base
 
 has_secure_password
 validates_presence_of :password, :on => :create
