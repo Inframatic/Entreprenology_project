@@ -8,30 +8,32 @@
 </head>
   <body>
 
-      <% if flash[:notice] %>
+      <header id="headernav" class="nav">
+        <ul class="nav-buttons">
+          <li id="register">
+            <%= link_to "Sign up", new_user_path %>
+          </li>
+          <p class="userinfo">
+          <li id="login-out">
+            <% if current_user %>
+              Signed in as <%= current_user.email %>. <%= link_to "Log out", new_session_path %>
+            <% else %>
+              <%= link_to " Log in", new_session_path %>
+            <% end %>
+          </li>
+          </p>
+        <li id="about"><a>About</a></li>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
         <p id="notice"><%= flash[:notice] %></p>
       <% end %>
       <% if flash[:alert] %>
         <p id="alert"><%= flash[:alert] %></p>
       <% end %>
 
-      <%= yield %>
-
-      <header id="headernav" class="nav">
-        <ul class="nav-buttons">
-          <li id="register"><a>Register</a></li>
-          <p class="userinfo">
-          <li id="login">
-          <% if current_user %>
-            Signed in as <%= current_user.email %>. <%= link_to "Log out", new_session_path %>
-          <% else %>
-            <%= link_to " Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-          <% end %>
-          </li>
-          </p>
-        <li id="about"><a>About</a></li>
-      </ul>
-    </header>
+    <%= yield %>
 
   </body>
 </html>
