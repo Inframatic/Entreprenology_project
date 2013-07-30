@@ -1,7 +1,7 @@
 class StartupsController < ApplicationController
 
   def index
-    @startup = Startup.all
+    @startups = Startup.all
   end
 
 
