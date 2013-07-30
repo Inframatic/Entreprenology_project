@@ -23,8 +23,7 @@ class StartupsController < ApplicationController
   def create
     # Make the variable @startup a new startup with the given params
     @startup = Startup.new(params[:startup])
-    if 
-      @startup.save
+    if @startup.save
       # if the save for the startup was successful, go to index.html.erb
       redirect_to startup_url
     else
@@ -36,9 +35,8 @@ class StartupsController < ApplicationController
 
   def update
     @startup = Startup.find(params[:id])
-      if 
-        @startup.update_attributes(params[:startup])
-        redirect_to startup_path(@startup)
+      if @startup.update_attributes(params[:startup])
+        redirect_to "/startups/#{@startup.id}"
       else
         render :edit
       end
