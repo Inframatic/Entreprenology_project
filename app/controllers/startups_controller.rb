@@ -37,7 +37,6 @@ class StartupsController < ApplicationController
 
 
   def create
-    # Make the variable @startup a new startup with the given params
     @startup = Startup.new(params[:startup])
 
     respond_to do |format|
@@ -54,6 +53,7 @@ class StartupsController < ApplicationController
 
   def update
     @startup = Startup.find(params[:id])
+
       if @startup.update_attributes(params[:startup])
         format.html { redirect_to @startup, notice: 'The startup profile was successfully updated.' }
         format.json { head :no_content }
