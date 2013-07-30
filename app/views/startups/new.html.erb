@@ -1,42 +1,43 @@
 <h1>Add a Startup</h1>
-<%= form_tag "/startups" do %>
+
+<%= form_for @startup do |f| %>
   <p>
-    <%= label_tag "Company Name" %><br>
-    <%= text_field_tag "company_name" %>
+    <%= f.label "Company Name" %><br>
+    <%= f.text_field "company_name" %>
   </p>
   <p>
-    <%= label_tag "Contact Person" %><br>
-    <%= text_field_tag "contact_person" %>
+    <%= f.label "Contact Person" %><br>
+    <%= f.text_field "contact_person" %>
   </p>
   <p>
-    <%= label_tag "Contact Person's Email" %><br>
-    <%= text_field_tag "contact_person_email" %>
+    <%= f.label "Contact Person's Email" %><br>
+    <%= f.text_field "contact_person_email" %>
   </p>
    <p>
-    <%= label_tag "Industry" %><br>
-    <%= text_field_tag "industry" %>
+    <%= f.label "Industry" %><br>
+    <%= f.text_field "industry" %>
   </p>
   <p>
-    <%= label_tag "City" %><br>
-    <%= text_field_tag "city" %> 
+    <%= f.label "City" %><br>
+    <%= f.text_field "city" %> 
   </p>
   <p>
-    <%= label_tag "Country" %><br>
-    <%= text_field_tag "country" %> 
+    <%= f.label "Country" %><br>
+    <%= f.text_field "country" %> 
   </p>
   <p>
-    <%= label_tag "Number of Employees" %><br>
-    <%= text_field_tag "number_of_employees" %> 
+    <%= f.label "Number of Employees" %><br>
+    <%= f.text_field "number_of_employees" %> 
   </p>
   <p>
-    <%= label_tag "Upload Logo" %><br>
-    <%= text_field_tag "logo" %> 
+    <%= f.label "Upload Logo" %><br>
+    <%= f.text_field "logo" %> 
   </p>
   <p>
-    <%= label_tag "Upload Banner" %><br>
-    <%= text_field_tag "banner" %>
+    <%= f.label "Upload Banner" %><br>
+    <%= f.text_field "banner" %>
   </p>
   <p>
-    <input type="submit"/>
+    <%= f.submit "Save" %>
   </p>
-</form>
+<% end %>

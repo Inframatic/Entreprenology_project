@@ -21,14 +21,16 @@ class StartupsController < ApplicationController
 
 
   def create
-    # @startup = Startup.new(params[:startup])
-    # if 
-    #   @startup.save
-    #   redirect_to startup_url
-    # else
-    #   render :new
-    # end
-    render :text => "Saving a new Startup: Company Name: #{params[:company_name]}, Contact Person: #{params[:contact_person]}, Contact Person Email: #{params[:contact_person_email]}, Industry: #{params[:industry]}, City: #{params[:city]}, Country: #{params[:country]}, Number of Employees: #{params[:number_of_employees]}, Logo: #{params[:logo]}, Banner: #{params[:banner]}"
+    # Make the variable @startup a new startup with the given params
+    @startup = Startup.new(params[:startup])
+    if 
+      @startup.save
+      # if the save for the startup was successful, go to index.html.erb
+      redirect_to startup_url
+    else
+      # Otherwise render the view associated with the action :new (i.e. new.html.erb)
+      render :new
+    end
   end
 
 
