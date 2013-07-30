@@ -1,12 +1,23 @@
 class StartupsController < ApplicationController
 
+
   def index
     @startups = Startup.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @startups }
+    end
   end
 
 
   def show
     @startup = Startup.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @startup }
+    end
   end
 
 
@@ -17,18 +28,26 @@ class StartupsController < ApplicationController
 
   def new
     @startup = Startup.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @startup }
+    end
   end
 
 
   def create
     # Make the variable @startup a new startup with the given params
     @startup = Startup.new(params[:startup])
-    if @startup.save
-      # if the save for the startup was successful, go to index.html.erb
-      redirect_to startup_url
-    else
-      # Otherwise render the view associated with the action :new (i.e. new.html.erb)
-      render :new
+
+    respond_to do |format|
+      if @startup.save
+        format.html { redirect_to @startup, notice: 'A new startup profile was successfully created.' }
+        format.json { render json: @startup, status: :created, location: @startup }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @startup.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -36,9 +55,11 @@ class StartupsController < ApplicationController
   def update
     @startup = Startup.find(params[:id])
       if @startup.update_attributes(params[:startup])
-        redirect_to startup_path(@startup)
+        format.html { redirect_to @startup, notice: 'The startup profile was successfully updated.' }
+        format.json { head :no_content }
       else
-        render :edit
+        format.html { render action: "edit" }
+        format.json { render json: @startup.errors, status: :unprocessable_entity }
       end
   end
 
@@ -46,7 +67,11 @@ class StartupsController < ApplicationController
   def destroy
     @startup = Startup.find(params[:id])
     @startup.destroy
-    redirect_to startups_url
+
+    respond_to do |format|
+      format.html { redirect_to startups_url }
+      format.json { head :no_content }
+    end
   end
 
 end 
