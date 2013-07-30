@@ -36,7 +36,7 @@ class StartupsController < ApplicationController
   def update
     @startup = Startup.find(params[:id])
       if @startup.update_attributes(params[:startup])
-        redirect_to "/startups/#{@startup.id}"
+        redirect_to startup_path(@startup)
       else
         render :edit
       end

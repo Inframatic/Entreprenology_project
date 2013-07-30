@@ -1,0 +1,41 @@
+<%= form_for @startup do |f| %>
+  <p>
+    <%= f.label "Company Name" %><br>
+    <%= f.text_field "company_name" %>
+  </p>
+  <p>
+    <%= f.label "Contact Person" %><br>
+    <%= f.text_field "contact_person" %>
+  </p>
+  <p>
+    <%= f.label "Contact Person's Email" %><br>
+    <%= f.text_field "contact_person_email" %>
+  </p>
+   <p>
+    <%= f.label "Industry" %><br>
+    <%= f.text_field "industry" %>
+  </p>
+  <p>
+    <%= f.label "City" %><br>
+    <%= f.text_field "city" %> 
+  </p>
+  <p>
+    <%= f.label "Country" %><br>
+    <%= f.text_field "country" %> 
+  </p>
+  <p>
+    <%= f.label "Number of Employees" %><br>
+    <%= f.text_field "number_of_employees" %> 
+  </p>
+  <p>
+    <%= f.label "Upload Logo" %><br>
+    <%= f.text_field "logo" %> 
+  </p>
+  <p>
+    <%= f.label "Upload Banner" %><br>
+    <%= f.text_field "banner" %>
+  </p>
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>
