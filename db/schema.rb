@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731231401) do
+ActiveRecord::Schema.define(version: 20130731233945) do
 
   create_table "accounts", force: true do |t|
     t.string   "email"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 20130731231401) do
     t.string   "industry"
     t.string   "country"
     t.string   "city"
-    t.string   "zip_code"
+    t.string   "postal_code"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "logable_id"
     t.string   "logable_type"
+    t.string   "type"
   end
 
   create_table "interns", force: true do |t|

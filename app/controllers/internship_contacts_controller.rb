@@ -1,4 +1,4 @@
-class InternshipContactController < ApplicationController
+class InternshipContactsController < ApplicationController
 
   def show
     @internship_contact = InternshipContact.find(params[:id])
