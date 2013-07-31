@@ -1,6 +1,6 @@
 class InternsController < ApplicationController
   def index
-    @users = User.all
+    @interns = Intern.all
 
     respond_to do |format|
       format.html
@@ -9,7 +9,7 @@ class InternsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @intern = Intern.find(params[:id])
 
       respond_to do |format|
       format.html
@@ -18,40 +18,40 @@ class InternsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @intern = Intern.find(params[:id])
   end
 
   def new
-    @user = User.new
+    @intern = Intern.new
   end
 
   def create
     params.permit!
-    @user = User.new(params[:user])
-      if @user.save
-        redirect_to users_url, :notice => "Signed up!"
+    @intern = Intern.new(params[:intern])
+      if @intern.save
+        redirect_to interns_url, :notice => "Signed up!"
       else
         render "new"
       end
   end
 
   def update
-    @user = User.find(params[:id])
+    @intern = Intern.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'Profile updated' }
+      if @intern.update_attributes(params[:intern])
+        format.html { redirect_to @intern, notice: 'Profile updated' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @intern.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    @intern = Intern.find(params[:id])
+    @intern.destroy
 
       respond_to do |format|
       format.html { redirect_to users_url }

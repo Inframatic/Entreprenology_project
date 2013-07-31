@@ -1,31 +1,32 @@
 <h1>Sign Up</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', interns_path %>
 
 
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
+<%= form_for @intern do |f| %>
+  <% if @intern.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
-        <% for message in @user.errors.full_messages %>
+        <% for message in @intern.errors.full_messages %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :password %><br/>
-    <%= f.password_field :password %>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :dob %><br/>
+    <%= f.text_field :dob %>
   </div>
+
   <div class="actions"><%= f.submit %></div>
 <% end %>

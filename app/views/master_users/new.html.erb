@@ -1,0 +1,48 @@
+<%= link_to 'Back', master_users_path %>
+
+
+<%= form_for @master_user do |f| %>
+  <% if @master_user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @master_user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :email %><br/>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :industry %><br/>
+    <%= f.text_field :industry %>
+  </div>
+   <div class="field">
+    <%= f.label :country %><br/>
+    <%= f.text_field :country %>
+  </div>
+   <div class="field">
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </div>
+   <div class="field">
+    <%= f.label :zip_code %><br/>
+    <%= f.text_field :zip_code %>
+  </div>
+   <div class="field">
+    <%= f.label :description %><br/>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br/>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br/>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
