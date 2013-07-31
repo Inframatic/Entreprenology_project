@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731194016) do
+ActiveRecord::Schema.define(version: 20130731200950) do
 
   create_table "accounts", force: true do |t|
     t.string   "email"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20130731194016) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
-    t.integer  "logable_id"
   end
 
   add_index "interns", ["slug"], name: "index_interns_on_slug"
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 20130731194016) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "founded"
-    t.integer  "logable_id"
   end
 
 end

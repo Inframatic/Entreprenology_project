@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
 
   def create
     params.permit!
-    @account = Account.new(params[:master_user])
+    @account = Account.new(params[:logable_id])
       if @account.save
         redirect_to accounts_url, :notice => "Signed up!"
       else
