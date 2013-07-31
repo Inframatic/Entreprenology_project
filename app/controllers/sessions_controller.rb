@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
   def new
-    @user = MasterUser.new
+    @account = Account.new
   end
 
   def create
-    user = MasterUser.find_by_email(params[:email])
+    @account = Account.find_by_email(params[:email])
     
-    if user && user.authenticate(params[:password])
-      session[:master_user_id] = user.id
-      redirect_to users_url, :notice => "Logged in!"
+    if @account && account.authenticate(params[:password])
+      session[:account_id] = @account.id
+      redirect_to accounts_url, :notice => "Logged in!"
     else
       flash.now[:alert] = "Invalid email or password"
       render "new"
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:master_user_id] = nil
-    redirect_to users_url, :notice => "Logged out"
+    session[:account_id] = nil
+    redirect_to accounts_url, :notice => "Logged out"
   end
 end
