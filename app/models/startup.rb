@@ -1,5 +1,6 @@
 class Startup < ActiveRecord::Base
 
+  has_one :logable, :as :logable
   has_secure_password
   validates_presence_of :password, :on => :create
   
