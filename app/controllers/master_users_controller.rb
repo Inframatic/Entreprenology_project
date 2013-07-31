@@ -1,0 +1,2 @@
+class MasterUsersController < ApplicationController
+end

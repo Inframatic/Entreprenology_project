@@ -1,8 +1,9 @@
 Entreprenologyproject::Application.routes.draw do
-resources :interns
-resources :startups
-resources :sessions, :only => [:new, :create, :destroy]
+	resources :master_users
+	resources :interns
+	resources :startups
+	resources :sessions, :only => [:new, :create, :destroy]
 
-root :to => 'welcome#index'
+	root :to => 'welcome#index'
 
 end
