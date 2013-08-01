@@ -6,36 +6,36 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-  <body>
-
-      <header id="headernav" class="nav">
-        <ul class="nav-buttons">
-          <li id="register">
+<body>
+  <header id="headernav" class="nav">
+    <ul class="nav-bar">
+        <% if current_user %>
+          <li class="nav=buttons" id="user-info">
+          Signed in as <%= current_user.email %>
+          </li>
+          <li class="nav-buttons">
+            <%= link_to "Log out", new_session_path, :method => :DELETE %>
+          </li>
+        <% else %>
+          <li class="nav-buttons">
             <%= link_to "Sign up", new_account_path %>
           </li>
-          <p class="userinfo">
-          <li id="login-out">
-            <% if current_user %>
-              Signed in as <%= current_user.email %>. <%= link_to "Log out", new_session_path, :method => :DELETE %>
-            <% else %>
-              <%= link_to " Log in", new_session_path %>
-            <% end %>
+          <li class="nav-buttons">
+          <%= link_to " Log in", new_session_path %>
           </li>
-          </p>
-        <li id="about"><a>About</a></li>
-      </ul>
-    </header>
+        <% end %>
+      </li>
+      <li id="about"><a>About</a></li>
+    </ul>
+  </header>
 
-    <% if flash[:notice] %>
-        <p id="notice"><%= flash[:notice] %></p>
-      <% end %>
-      <% if flash[:alert] %>
-        <p id="alert"><%= flash[:alert] %></p>
-      <% end %>
+  <% flash.each do |name, msg| %>
+  <% content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
 
-    <%= yield %>
+  <%= yield %>
 
-    <!-- Javascript Libraries -->
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  </body>
+  <!-- Javascript Libraries -->
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+</body>
 </html>

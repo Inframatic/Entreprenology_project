@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731233945) do
+ActiveRecord::Schema.define(version: 20130801014818) do
 
   create_table "accounts", force: true do |t|
     t.string   "email"
-    t.string   "password_digest"
     t.string   "industry"
     t.string   "country"
     t.string   "city"
@@ -26,6 +25,8 @@ ActiveRecord::Schema.define(version: 20130731233945) do
     t.integer  "logable_id"
     t.string   "logable_type"
     t.string   "type"
+    t.string   "password_hash"
+    t.string   "password_salt"
   end
 
   create_table "interns", force: true do |t|
