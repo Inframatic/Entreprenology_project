@@ -17,24 +17,34 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header id="headernav" class="nav">
-      <ul class="nav-bar">
-        <% if current_user %>
-          <li class="nav=buttons" id="user-info">Signed in as <%= current_user.email %>
-          </li>
-          <li class="nav-buttons">
-            <%= link_to "Log out", new_session_path, :method => :DELETE %>
-          </li>
-        <% else %>
-          <li class="nav-buttons">
-            <%= link_to "Sign up", new_account_path %>
-          </li>
-          <li class="nav-buttons">
-            <%= link_to " Log in", new_session_path %>
-          </li>
-        <% end %>
-        <li id="about"><a>About</a></li>
+    <!-- <header id="headernav" class="nav"> -->
+    <header class="top-bar"> 
+      <!-- <ul class="nav-bar"> -->
+      <ul class="title-area">
+      <% if current_user %>
+        <!-- <li class="nav=buttons" id="user-info">Signed in as --> 
+        <li class="name">Signed in as<%= current_user.email %>
+        </li>
       </ul>
+      <% else %>
+        <section class="top-bar-section">
+          <ul class="right">
+            <!-- <li class="nav-buttons"> -->
+            <li class="divider"></li>
+            <li><%= link_to "Log out", new_session_path, :method => :DELETE %>
+            </li>
+            <!-- <li class="nav-buttons"> -->
+            <li class="divider"></li>
+              <%= link_to "Sign up", new_account_path %>
+            </li>
+            <!-- <li class="nav-buttons"> -->
+            <li class="divider"></li>
+              <%= link_to " Log in", new_session_path %>
+            </li>
+            <li id="about"><a>About</a></li>
+          </ul>
+        </div>
+      <% end %>
     </header>
 
   <% flash.each do |name, msg| %>
