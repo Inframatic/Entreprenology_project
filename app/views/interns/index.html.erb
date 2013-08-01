@@ -1,2 +1,7 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>All Interns // Intern's View of Map</h1>
+
+<% @interns.each do |intern| %>
+  <p>
+    <%= intern[:first_name] %>, <%= intern[:last_name] %>, <%= intern[:dob] %>
+  </p>
+<% end %>

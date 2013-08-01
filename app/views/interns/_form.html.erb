@@ -1,22 +1,15 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+<%= form_for @intern do |f| %>
+  <% if @intern.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+      <h2><%= Form is invalid</h2>
       <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @intern.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-<%= form_for(@user) do |f| %>
-
-    <div class="field">
-    <%= f.label :email %><br />
-    <%= f.number_field :email %>
-  </div>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -25,23 +18,9 @@
     <%= f.label :last_name %><br />
     <%= f.text_field :first_name %>
   </div>
-
   <div class="field">
     <%= f.label :dob %><br />
     <%= f.text_area :dob %>
-  </div>
-  <div class="field">
-    <%= f.label :industry %><br />
-    <%= f.number_field :industry %>
-  </div>
-
-    <div class="field">
-    <%= f.label :country %><br />
-    <%= f.number_field :country %>
-  </div>
-    <div class="field">
-    <%= f.label :city %><br />
-    <%= f.number_field :city %>
   </div>
   <div class="actions">
     <%= f.submit %>
