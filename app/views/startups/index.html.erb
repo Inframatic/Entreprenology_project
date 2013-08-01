@@ -2,6 +2,8 @@
 <%= link_to "New Startup", "/startups/new" %>
 
 <% @startups.each do |startup| %>
-  <p><%= startup[:company_name] %>, <%= startup[:number_of_employees] %>,
   <img src="<%= startup[:logo] %>">
+  <p>
+    <%= startup[:company_name] %>, <%= startup[:founded] %>, <%= startup[:number_of_employees] %>
+  </p>
 <% end %>

@@ -13,6 +13,10 @@
   <div class="field">
     <%= f.label :type %><br/>
     <%= f.text_field :type %>
+      <% if @account.type == "Intern" %>
+        <%= render interns_new_path %>
+      <% elsif @account.type == "Startup" %>
+        <%= render startups_new_path %>
   </div>
   <div class="field">
     <%= f.label :email %><br/>
