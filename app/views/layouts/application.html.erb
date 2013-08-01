@@ -12,7 +12,6 @@
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   	<title><%= content_for?(:title) ? yield(:title) : "Internships For" %></title>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
@@ -45,7 +44,6 @@
     <%= yield %>
 
     <!-- Javascript Libraries -->
-    <%= javascript_include_tag "application" %>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 </body>
 </html>
