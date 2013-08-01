@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Entreprenology Worldwide</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header id="headernav" class="nav">
-    <ul class="nav-bar">
-        <% if current_user %>
-          <li class="nav=buttons" id="user-info">
-          Signed in as <%= current_user.email %>
-          </li>
-          <li class="nav-buttons">
-            <%= link_to "Log out", new_session_path, :method => :DELETE %>
-          </li>
-        <% else %>
-          <li class="nav-buttons">
-            <%= link_to "Sign up", new_account_path %>
-          </li>
-          <li class="nav-buttons">
-          <%= link_to " Log in", new_session_path %>
-          </li>
-        <% end %>
-      </li>
-      <li id="about"><a>About</a></li>
-    </ul>
-  </header>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
 
-  <% flash.each do |name, msg| %>
-  <% content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-  <%= yield %>
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Javascript Libraries -->
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-</body>
+  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <%= yield %>
+
+    
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
