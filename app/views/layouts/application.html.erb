@@ -38,8 +38,8 @@
         </li>
 
         <li class="signup">
-          <a class="signup", <% if current_user %>
-            Signed in as <%= current_user.email %>
+          <a class="signup", <% if @current_user %>
+            Signed in as <%= @current_user.email %>
           <% else %>
             <%= link_to "Sign up", new_account_path %>
           <% end %></a>
