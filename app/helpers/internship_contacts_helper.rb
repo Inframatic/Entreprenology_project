@@ -1,2 +1,2 @@
-module InternshipContactHelper
+module InternshipContactsHelper
 end

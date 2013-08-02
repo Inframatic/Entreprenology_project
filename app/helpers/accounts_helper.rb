@@ -1,2 +1,2 @@
-module MasterUsersHelper
+module AccountsHelper
 end

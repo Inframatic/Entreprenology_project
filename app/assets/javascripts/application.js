@@ -33,4 +33,3 @@
 
 
 $(function(){ $(document).foundation(); });
->>>>>>> foundation
