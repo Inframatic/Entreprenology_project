@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
 // =require foundation/foundation
 // =require foundation/foundation.alerts
 // =require foundation/foundation.clearing
@@ -30,3 +28,9 @@
 // =require foundation/foundation.interchange
 // =require foundation/foundation.placeholder
 // =require foundation/foundation.abide
+//= require turbolinks
+//= require_tree .
+
+
+$(function(){ $(document).foundation(); });
+>>>>>>> foundation

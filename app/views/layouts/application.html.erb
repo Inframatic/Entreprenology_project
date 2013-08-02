@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Entreprenology</title>
-  <meta content="A new way to get an internship, with startups" name="Description">
+  <!-- Set the viewport width to device width for mobile -->
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="A new way to get an internship with startups" name="Description">
+  <title>Entreprenology</title>
+  <title><%= content_for?(:title) ? yield(:title) : "A new way to get an internship with startups" %></title>
   <%= csrf_meta_tags %>
   <link data-turbolinks-track="true" href=
   "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
@@ -18,8 +23,8 @@
       <figure id="lightning_identifier">
         <a href="#">Entreprenology</a>
       </figure>
-
       <ul id="lightning_drop">
+
         <li class="home">
           <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
         </li>
@@ -49,19 +54,15 @@
         <li class="logout">
           <a class="logout", <%= link_to "Log out", new_session_path, :method => :DELETE %></a>
         </li>
-
       </ul>
     </nav>
 
-  <% flash.each do |name, msg| %>
-  <% content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
+    <% flash.each do |name, msg| %>
+      <% content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
 
-  <%= yield %>
+    <div class="large-8 columns"><%= yield %></div>
+    <div class="large-4 columns">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  <script data-turbolinks-track="true" src=
-  "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.outside-adb76dec4615a5ab518fe65da519685a.js"></script>
-   
 </body>
 </html>

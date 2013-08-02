@@ -1,5 +1,5 @@
 <h1>Startup Profile</h1>
-<%= link_to "Back to Startups", startups_url %> | <%= link_to "Edit", edit_startup_path(@startup) %> | <%= link_to "Delete", @startup, :confirm => "Are you sure you want to delete your profile?", :method => :delete %>
+<%= link_to "Back to Startups", startups_url, class: "button radius" %> | <%= link_to "Edit", edit_startup_path(@startup), class: "button radius" %> | <%= link_to "Delete", @startup,, class: "button radius", :confirm => "Are you sure you want to delete your profile?", :method => :delete %>
 
   <img src="<%= startup[:logo] %>">
   <p>
