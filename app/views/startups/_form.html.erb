@@ -28,7 +28,7 @@
   </div>
 
   <% f.fields_for :account do |builder| %>
-    <%= render file: "/app/views/accounts/_account_fields", :f => builder %>
+    <%= render file: "/app/views/accounts/_account_fields" %>
   <% end %>
 
   <div class="action">

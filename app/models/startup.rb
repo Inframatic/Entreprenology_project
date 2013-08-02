@@ -1,6 +1,6 @@
 class Startup < ActiveRecord::Base
 
-  has_one :account, :as => :logable, :dependent => :destroy
+  has_one :account, :as => :logable
   has_many :internships
   
   accepts_nested_attributes_for :account

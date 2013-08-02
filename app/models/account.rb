@@ -1,6 +1,6 @@
 class Account < ActiveRecord::Base
 
-  belongs_to :logable, polymorphic: true
+  belongs_to :logable, polymorphic: true, :dependent => :destroy
   before_save :encrypt_password
 
   validates_confirmation_of :password
