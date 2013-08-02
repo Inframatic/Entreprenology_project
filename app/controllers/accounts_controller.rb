@@ -23,7 +23,7 @@ class AccountsController < ApplicationController
 
 
   def edit
-    @uaccount = current_user
+    @account = current_user
   end
 	# def edit
  #    @account = Account.find(params[:id])
@@ -41,7 +41,7 @@ class AccountsController < ApplicationController
   # def update
  #    @account = current_account.accounts.find(params[:id])
  #    @account.update_attributes!(account_params)
- #    redirect_to show_account_path
+ 
 	# end
 
 
@@ -52,7 +52,7 @@ class AccountsController < ApplicationController
   private
 
     def set_user
-        @user = current_user
+        @account = current_user
     end
     
     def account_params
