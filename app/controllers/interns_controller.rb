@@ -23,12 +23,11 @@ class InternsController < ApplicationController
 
   def new
     @intern = Intern.new
-    @intern.account.build
+    @intern.build_account
   end
 
   def create
-    params.permit!
-    @intern = Intern.new(params[:intern])
+    @intern = Intern.new(intern_params)
       if @intern.save
         redirect_to root_url, :notice => "Signed up!"
       else
@@ -58,5 +57,11 @@ class InternsController < ApplicationController
       format.html { redirect_to interns_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def intern_params
+    params.require(:intern).permit(:first_name, :last_name, :dob, account_params)
   end
 end

@@ -28,7 +28,7 @@ class StartupsController < ApplicationController
 
   def new
     @startup = Startup.new
-    @startup.account.build
+    @startup.build_account
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,7 +38,7 @@ class StartupsController < ApplicationController
 
 
   def create
-    @startup = Startup.new(params[:startup])
+    @startup = Startup.new(startup_params)
 
     respond_to do |format|
       if @startup.save
@@ -73,6 +73,13 @@ class StartupsController < ApplicationController
       format.html { redirect_to startups_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def startup_params
+    params.require(:startup).permit(:company_name, :number_of_employees,
+     :logo, :founded, account_params)
   end
 
 end 

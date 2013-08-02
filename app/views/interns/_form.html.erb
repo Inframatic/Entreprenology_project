@@ -1,7 +1,7 @@
 <%= form_for @intern do |f| %>
   <% if @intern.errors.any? %>
     <div id="error_explanation">
-      <h2><%= Form is invalid</h2>
+      <h2>Form is invalid</h2>
       <ul>
         <% f.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -24,7 +24,7 @@
   </div>
 
   <% f.fields_for :account do |builder| %>
-    <%= render "../accounts/question_fields", :f => builder %>
+    <%= render file: "/app/views/accounts/_account_fields", :f => builder %>
   <% end %>
 
   <div class="actions">

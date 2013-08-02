@@ -3,11 +3,11 @@ class AccountsController < ApplicationController
 	end
 
   def new
-    # @account = Account.new
+    @account = Account.new
   end
 
   def create
-    @account = Account.new(params[:account])
+    @account = Account.new(account_params)
       if @account.save
         redirect_to accounts_url, :notice => "Signed up!"
       else
@@ -16,7 +16,7 @@ class AccountsController < ApplicationController
   end
 
 	def edit
-    @account = Account.find(params[:id])
+    @account = Account.find(account_params)
 	end
 
 	def update
@@ -31,6 +31,7 @@ class AccountsController < ApplicationController
   private
 
     def account_params
-      params.require(:account).permit(:password, :email)
+      params.require(:account).permit(:password, :email, :industry, :country,
+        :city, :postal_code, :description)
     end
 end
