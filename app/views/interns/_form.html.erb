@@ -3,7 +3,7 @@
     <div id="error_explanation">
       <h2><%= Form is invalid</h2>
       <ul>
-        <% @intern.errors.full_messages.each do |msg| %>
+        <% f.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -22,7 +22,13 @@
     <%= f.label :dob %><br />
     <%= f.text_area :dob %>
   </div>
+
+  <% f.fields_for :account do |builder| %>
+    <%= render "../accounts/question_fields", :f => builder %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

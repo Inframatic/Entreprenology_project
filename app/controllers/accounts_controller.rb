@@ -3,7 +3,7 @@ class AccountsController < ApplicationController
 	end
 
   def new
-    @account = Account.new
+    # @account = Account.new
   end
 
   def create

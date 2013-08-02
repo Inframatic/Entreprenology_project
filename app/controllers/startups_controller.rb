@@ -28,6 +28,7 @@ class StartupsController < ApplicationController
 
   def new
     @startup = Startup.new
+    @startup.account.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +42,7 @@ class StartupsController < ApplicationController
 
     respond_to do |format|
       if @startup.save
-        format.html { redirect_to @startup, notice: 'A new startup profile was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Company Profile Created!' }
         format.json { render json: @startup, status: :created, location: @startup }
       else
         format.html { render action: "new" }
@@ -55,7 +56,7 @@ class StartupsController < ApplicationController
     @startup = Startup.find(params[:id])
 
       if @startup.update_attributes(params[:startup])
-        format.html { redirect_to @startup, notice: 'The startup profile was successfully updated.' }
+        #format.html { redirect_to @startup, notice: 'The startup profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

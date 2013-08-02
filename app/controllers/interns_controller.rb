@@ -4,7 +4,7 @@ class InternsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @users}
+      format.json { render json: @interns}
     end
   end
 
@@ -13,7 +13,7 @@ class InternsController < ApplicationController
 
       respond_to do |format|
       format.html
-      format.json { render json: @user}
+      format.json { render json: @intern}
     end
   end
 
@@ -23,13 +23,14 @@ class InternsController < ApplicationController
 
   def new
     @intern = Intern.new
+    @intern.account.build
   end
 
   def create
     params.permit!
     @intern = Intern.new(params[:intern])
       if @intern.save
-        redirect_to interns_url, :notice => "Signed up!"
+        redirect_to root_url, :notice => "Signed up!"
       else
         render "new"
       end
@@ -54,7 +55,7 @@ class InternsController < ApplicationController
     @intern.destroy
 
       respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to interns_url }
       format.json { head :no_content }
     end
   end

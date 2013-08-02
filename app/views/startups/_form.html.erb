@@ -27,6 +27,10 @@
     <%= f.text_field :logo %> 
   </div>
 
+  <% f.fields_for :account do |builder| %>
+    <%= render "../accounts/question_fields", :f => builder %>
+  <% end %>
+
   <div class="action">
     <%= f.submit "Save" %>
   </div>
