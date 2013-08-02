@@ -6,9 +6,6 @@
   <meta content="A new way to get an internship, with startups" name="Description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <%= csrf_meta_tags %>
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  <script data-turbolinks-track="true" src=
-  "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.outside-adb76dec4615a5ab518fe65da519685a.js"></script>
   <link data-turbolinks-track="true" href=
   "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
   media="all" rel="stylesheet">
@@ -24,7 +21,7 @@
 
       <ul id="lightning_drop">
         <li class="home">
-          <a class="home" href="/index" style="color: #fff">ENTREPRENOLOGY</a>
+          <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
         </li>
 
         <li class="twitter">
@@ -33,36 +30,28 @@
         </li>
 
         <li class="contact">
-          <a class="contact" href="mailto:hello@entreprenolo.gy?subject=hi">Say
+          <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say
           hello</a>
         </li>
 
-        <li class="login">
-          <a class="login" href="/login">Log in</a>
+        <li class="signup">
+          <a class="signup", <% if current_user %>
+            Signed in as <%= current_user.email %>
+          <% else %>
+            <%= link_to "Sign up", new_account_path %>
+          <% end %></a>
         </li>
+
+        <li class="login">
+          <a class="login", <%= link_to " Log in", new_session_path %></a>
+        </li>
+
+        <li class="logout">
+          <a class="logout", <%= link_to "Log out", new_session_path, :method => :DELETE %></a>
+        </li>
+
       </ul>
     </nav>
-  <header id="headernav" class="nav">
-    <ul class="nav-bar">
-        <% if current_user %>
-          <li class="nav=buttons" id="user-info">
-          Signed in as <%= current_user.email %>
-          </li>
-          <li class="nav-buttons">
-            <%= link_to "Log out", new_session_path, :method => :DELETE %>
-          </li>
-        <% else %>
-          <li class="nav-buttons">
-            <%= link_to "Sign up", new_account_path %>
-          </li>
-          <li class="nav-buttons">
-          <%= link_to " Log in", new_session_path %>
-          </li>
-        <% end %>
-      </li>
-      <li id="about"><a>About</a></li>
-    </ul>
-  </header>
 
   <% flash.each do |name, msg| %>
   <% content_tag :div, msg, :id => "flash_#{name}" %>
@@ -70,7 +59,9 @@
 
   <%= yield %>
 
-  <!-- Javascript Libraries -->
- 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script data-turbolinks-track="true" src=
+  "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.outside-adb76dec4615a5ab518fe65da519685a.js"></script>
+   
 </body>
 </html>
