@@ -79,7 +79,7 @@ class StartupsController < ApplicationController
 
   def startup_params
     params.require(:startup).permit(:company_name, :number_of_employees,
-     :logo, :founded, account_params)
+     :logo, :founded, :account)
   end
 
 end 

@@ -62,6 +62,6 @@ class InternsController < ApplicationController
   private
 
   def intern_params
-    params.require(:intern).permit(:first_name, :last_name, :dob, account_params)
+    params.require(:intern).permit(:first_name, :last_name, :dob, :account)
   end
 end

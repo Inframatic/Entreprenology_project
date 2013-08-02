@@ -3,7 +3,7 @@
     <div id="error_explanation">
       <h2>Form is invalid</h2>
       <ul>
-        <% f.errors.full_messages.each do |msg| %>
+        <% @intern.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -24,7 +24,6 @@
   </div>
 
   <%= f.fields_for :account do |builder| %>
-    <!-- <%= render #file: "/app/views/accounts/_account_fields" %> -->
     <div class="field">
       <%= builder.label :email, "Email" %><br />
       <%= builder.text_field :email %>

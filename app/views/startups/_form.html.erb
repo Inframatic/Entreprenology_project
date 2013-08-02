@@ -28,7 +28,6 @@
   </div>
 
   <%= fields_for :account do |builder| %>
-    <!-- <%= render #file: "/app/views/accounts/_account_fields" %> -->
     <div class="field">
       <%= builder.label :email, "Email" %><br />
       <%= builder.text_field :email %>
@@ -46,7 +45,7 @@
       <%= builder.text_field :country %> 
     </div>
     <div class="field">
-      <%= builder.label :description, "Company Description" %><br />
+      <%= builder.label :description, "About Me" %><br />
       <%= builder.text_area :description %> 
     </div>
     <div class="field">
