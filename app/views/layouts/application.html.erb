@@ -38,11 +38,16 @@
         </li>
 
         <li class="signup">
-          <a class="signup", <% if @current_user %>
-            Signed in as <%= @current_user.email %>
-          <% else %>
-            <%= link_to "Sign up", new_account_path %>
-          <% end %></a>
+          <a class="signup"
+            <% if @current_user %>
+              Logged in as <%= @current_user.email %>
+              <%= link_to "Log out", new_session_path %>
+              <%= link_to "My Account", my_account_path %>
+            <% else %>
+              <%= link_to "Sign up", new_account_path %>
+               <%= link_to "Log in", new_session_path %> 
+            <% end %>
+          </a>
         </li>
 
         <li class="login">
@@ -57,6 +62,9 @@
     </nav>
     <div class="large-8 columns"><%= yield %></div>
     <div class="large-4 columns">
+      <p>
+        Where does this come out?
+      </p>
     </div>
   </body>
 </html>
