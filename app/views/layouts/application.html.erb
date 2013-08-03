@@ -3,83 +3,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="A new way to get an internship with startups" name="Description">
-    <title>Entreprenology</title>
-    <title><%= content_for?(:title) ? yield(:title) : "A new way to get an internship with startups" %></title>
-    <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="css/app.css" />
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <script type="text/javascript" src="//use.typekit.net/mxw2qch.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <title><%= content_for?(:title) ? yield(:title) : "Entreprenology" %></title>
+
     <link data-turbolinks-track="true" href=
     "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
     media="all" rel="stylesheet">
-    <script src="js/vendor/custom.modernizr.js"></script>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application" %>
+
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <script type="text/javascript" src="//use.typekit.net/mxw2qch.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
   </head>
   <body>
     <div id="loading">&nbsp;</div>
-    <nav id="lightning">
-      <figure id="lightning_identifier">
-        <a href="#">Entreprenology</a>
-      </figure>
-      <ul id="lightning_drop">
-
-        <li class="home">
-          <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
-        </li>
-
-        <li class="twitter">
-          <a class="twitter" href="https://twitter.com/entreprenology" target=
-          "_blank">@entreprenology</a>
-        </li>
-
-        <li class="contact">
-          <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say
-          hello</a>
-        </li>
-
-        <li class="signup">
-          <a class="signup"
-            <% if @current_user %>
-              Logged in as : <%= @current_user.email %>
-              <%= link_to "Log out", new_session_path, :method => :DELETE %>
-              <%= link_to "My Account", my_account_path %>
-            <% else %>
-              <%= link_to "Sign up", new_account_path %>
-               <%= link_to "Log in", new_session_path %> 
-            <% end %>
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav id="lightning">
+        <figure id="lightning_identifier">
+          <a href="#">Entreprenology</a>
+        </figure>
+        <ul id="lightning_drop">
+          <li class="home">
+            <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
+          </li>
+          <li class="twitter">
+            <a class="twitter" href="https://twitter.com/entreprenology" target=
+            "_blank">@entreprenology</a>
+          </li>
+          <li class="contact">
+            <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say
+            hello</a>
+          </li>
+          <li class="signup">
+            <a class="signup"
+              <% if @current_user %>
+                Logged in as : <%= @current_user.email %>
+                <%= link_to "Log out", new_session_path, :method => :DELETE %>
+                <%= link_to "My Account", my_account_path %>
+              <% else %>
+                <%= link_to "Sign up", new_account_path %>
+                 <%= link_to "Log in", new_session_path %> 
+              <% end %>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <div class="large-8 columns"><%= yield %></div>
     <div class="large-4 columns"></div>
 
-    <script>
-    document.write('<script src=' +
-    ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-    '.js><\/script>')
-    </script>
-    <script src="js/foundation/foundation.js"></script>
-    <script src="js/foundation/foundation.alerts.js"></script>
-    <script src="js/foundation/foundation.clearing.js"></script>
-    <script src="js/foundation/foundation.cookie.js"></script>
-    <script src="js/foundation/foundation.dropdown.js"></script>
-    <script src="js/foundation/foundation.forms.js"></script>
-    <script src="js/foundation/foundation.joyride.js"></script>
-    <script src="js/foundation/foundation.magellan.js"></script>
-    <script src="js/foundation/foundation.orbit.js"></script>
-    <script src="js/foundation/foundation.placeholder.js"></script>
-    <script src="js/foundation/foundation.reveal.js"></script>
-    <script src="js/foundation/foundation.section.js"></script>
-    <script src="js/foundation/foundation.tooltips.js"></script>
-    <script src="js/foundation/foundation.topbar.js"></script>
-    <script src="js/foundation/foundation.interchange.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

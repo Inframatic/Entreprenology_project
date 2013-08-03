@@ -27,6 +27,9 @@ gem 'jquery-rails'
 # Use Foundation for CSS responsiveness
 gem 'zurb-foundation'
 
+# you need this or you get an error
+gem 'compass-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
