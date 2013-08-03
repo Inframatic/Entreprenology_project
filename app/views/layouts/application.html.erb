@@ -11,7 +11,7 @@
     <ul class="nav-bar">
         <% if current_user %>
           <li class="nav=buttons" id="user-info">
-          Signed in as <%= current_user.email %>
+          <%= link_to "Signed in as #{current_user.email}", root_path %>
           </li>
           <li class="nav-buttons">
             <%= link_to "Log out", new_session_path, :method => :DELETE %>

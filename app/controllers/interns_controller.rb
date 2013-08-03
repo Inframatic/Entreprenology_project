@@ -23,15 +23,16 @@ class InternsController < ApplicationController
 
   def new
     @intern = Intern.new
-    @intern.build_account
+    @intern.build_account(params[:account])
   end
 
   def create
+    # render text: params.to_yaml and return
     @intern = Intern.new(intern_params)
       if @intern.save
         redirect_to root_url, :notice => "Signed up!"
       else
-        render "new"
+        render :new
       end
   end
 
@@ -62,6 +63,6 @@ class InternsController < ApplicationController
   private
 
   def intern_params
-    params.require(:intern).permit(:first_name, :last_name, :dob, :account)
+    params.require(:intern).permit(:first_name, :last_name, :dob, :account_attributes)
   end
 end

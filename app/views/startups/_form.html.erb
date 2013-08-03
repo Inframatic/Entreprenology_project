@@ -1,4 +1,5 @@
 <%= form_for @startup do |f| %>
+  <div class="form" id="startup-form">
   <% if @startup.errors.any? %>
     <div class="error_message">
       <h2>Form is invalid</h2>
@@ -27,38 +28,13 @@
     <%= f.text_field :logo %> 
   </div>
 
-  <%= fields_for :account do |builder| %>
-    <div class="field">
-      <%= builder.label :email, "Email" %><br />
-      <%= builder.text_field :email %>
-    </div>
-    <div class="field">
-      <%= builder.label :industry, "Industry" %><br />
-      <%= builder.text_field :industry %>
-    </div>
-    <div class="field">
-      <%= builder.label :city, "City" %><br />
-      <%= builder.text_field :city %> 
-    </div>
-    <div class="field">
-      <%= builder.label :country, "Country" %><br />
-      <%= builder.text_field :country %> 
-    </div>
-    <div class="field">
-      <%= builder.label :description, "About Me" %><br />
-      <%= builder.text_area :description %> 
-    </div>
-    <div class="field">
-      <%= builder.label :password, "Password" %><br />
-      <%= builder.password_field :password %>
-    </div>
-    <div class="field">
-      <%= builder.label :password_confirmation, "Confirm Password" %><br />
-      <%= builder.password_field :password_confirmation %>
-    </div>
+  <div class="register-form" id="startup-account-form">
+    <%= f.fields_for :account do |builder| %>
 
- 
-  <% end %>
+      <%= render "account_fields", :f => builder %>
+
+    <% end %>
+  </div>
 
   <div class="action">
     <%= f.submit "Save" %>

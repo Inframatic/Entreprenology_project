@@ -38,6 +38,7 @@ class StartupsController < ApplicationController
 
 
   def create
+     render json: startup_params.to_json and return
     @startup = Startup.new(startup_params)
 
     respond_to do |format|
@@ -78,8 +79,10 @@ class StartupsController < ApplicationController
   private
 
   def startup_params
+
     params.require(:startup).permit(:company_name, :number_of_employees,
-     :logo, :founded, :account)
+     :logo, :founded, account_attributes: [:email, :industry, :country, :city, :postal_code,
+      :description, :password])
   end
 
 end 
