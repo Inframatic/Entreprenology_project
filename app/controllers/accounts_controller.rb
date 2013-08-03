@@ -21,7 +21,6 @@ class AccountsController < ApplicationController
       end
   end
 
-
   def edit
     @account = current_user
   end
@@ -56,7 +55,8 @@ class AccountsController < ApplicationController
     end
     
     def account_params
-      params.require(:account).permit(:password, :email)
+      params.require(:account).permit(:password, :email, :industry, :country,
+        :city, :postal_code, :description)
     end
 
 end

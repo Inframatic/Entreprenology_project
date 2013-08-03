@@ -4,7 +4,7 @@ class InternsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @users}
+      format.json { render json: @interns}
     end
   end
 
@@ -13,7 +13,7 @@ class InternsController < ApplicationController
 
       respond_to do |format|
       format.html
-      format.json { render json: @user}
+      format.json { render json: @intern}
     end
   end
 
@@ -23,15 +23,16 @@ class InternsController < ApplicationController
 
   def new
     @intern = Intern.new
+    @intern.build_account(params[:account])
   end
 
   def create
-    params.permit!
-    @intern = Intern.new(params[:intern])
+    # render text: params.to_yaml and return
+    @intern = Intern.new(intern_params)
       if @intern.save
-        redirect_to interns_url, :notice => "Signed up!"
+        redirect_to root_url, :notice => "Signed up!"
       else
-        render "new"
+        render :new
       end
   end
 
@@ -54,9 +55,16 @@ class InternsController < ApplicationController
     @intern.destroy
 
       respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to interns_url }
       format.json { head :no_content }
     end
   end
-  
+
+  private
+
+  def intern_params
+    params.require(:intern).permit(:first_name, :last_name, :dob, account_attributes:
+     [:email, :industry, :country, :city, :postal_code,
+      :description, :password])
+  end
 end

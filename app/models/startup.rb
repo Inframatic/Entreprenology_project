@@ -3,6 +3,7 @@ class Startup < ActiveRecord::Base
   has_one :account, :as => :logable
   has_many :internships
   
-  validates :company_name, :presence => true
+  accepts_nested_attributes_for :account
+  validates :company_name, :logo, :founded, :presence => true
   validates :number_of_employees, :numericality => {:only_integer => true}
 end
