@@ -28,7 +28,7 @@ class StartupsController < ApplicationController
 
   def new
     @startup = Startup.new
-    @startup.build_account
+    @startup.build_account(params[:account])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,7 +38,7 @@ class StartupsController < ApplicationController
 
 
   def create
-     render json: startup_params.to_json and return
+     # render json: startup_params.to_json and return
     @startup = Startup.new(startup_params)
 
     respond_to do |format|

@@ -1,5 +1,6 @@
 class Account < ActiveRecord::Base
-  # ------------------------attr_accessor :password
+  attr_accessor :password, :password_confirmation
+
   belongs_to :logable, polymorphic: true, :dependent => :destroy
   before_save :encrypt_password
 
