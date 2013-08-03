@@ -1,4 +1,5 @@
 <%= form_for @startup do |f| %>
+  <div class="form" id="startup-form">
   <% if @startup.errors.any? %>
     <div class="error_message">
       <h2>Form is invalid</h2>
@@ -25,6 +26,14 @@
   <div class="field">
     <%= f.label :logo %><br>
     <%= f.text_field :logo %> 
+  </div>
+
+  <div class="register-form" id="startup-account-form">
+    <%= f.fields_for :account do |builder| %>
+
+      <%= render "account_fields", :f => builder %>
+
+    <% end %>
   </div>
 
   <div class="action">

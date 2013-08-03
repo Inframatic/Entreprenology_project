@@ -28,6 +28,7 @@ class StartupsController < ApplicationController
 
   def new
     @startup = Startup.new
+    @startup.build_account(params[:account])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,11 +38,12 @@ class StartupsController < ApplicationController
 
 
   def create
-    @startup = Startup.new(params[:startup])
+     # render json: startup_params.to_json and return
+    @startup = Startup.new(startup_params)
 
     respond_to do |format|
       if @startup.save
-        format.html { redirect_to @startup, notice: 'A new startup profile was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Company Profile Created!' }
         format.json { render json: @startup, status: :created, location: @startup }
       else
         format.html { render action: "new" }
@@ -55,7 +57,7 @@ class StartupsController < ApplicationController
     @startup = Startup.find(params[:id])
 
       if @startup.update_attributes(params[:startup])
-        format.html { redirect_to @startup, notice: 'The startup profile was successfully updated.' }
+        #format.html { redirect_to @startup, notice: 'The startup profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,6 +74,15 @@ class StartupsController < ApplicationController
       format.html { redirect_to startups_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def startup_params
+
+    params.require(:startup).permit(:company_name, :number_of_employees,
+     :logo, :founded, account_attributes: [:email, :industry, :country, :city, :postal_code,
+      :description, :password])
   end
 
 end 
