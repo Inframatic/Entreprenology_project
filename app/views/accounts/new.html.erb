@@ -1,13 +1,13 @@
 <aside>
 	<h1>Create New Account</h1>
+	<p><%= link_to "Back to Home", root_path %></p>
 	<div class="content" id="question-box">
-		<p> Are you looking for an? </p>
+		<h3> Are you looking for an? </h3>
 
 		<!-- 	<button_to class="account-button" type="button" name="startup-button">Intern</button>
 			<button class="account-button" type="button" name="intern-button">Internship</button>
 		</div> -->
-		<%= button_to "Intern", new_startup_path, method: :get %>
-		<%= button_to "Internship", new_intern_path, method: :get %>
+		<%= button_to "Intern", new_startup_path, class: "button radius", method: :get %>
+		<%= button_to "Internship", new_intern_path, class: "button radius", method: :get %>
 	</div>
-		<%= link_to "Back to Home", root_path %>
 </aside>

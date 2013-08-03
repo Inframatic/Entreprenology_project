@@ -10,13 +10,14 @@
       </ul>
     </div>
   <% end %>
+  <!-- /end validation error messages -->
 
   <div class="field">
     <%= f.label :company_name %><br>
     <%= f.text_field :company_name %>
   </div>
   <div class="field">
-    <%= f.label :founded, class: "right inline", title: "When did the company get its' legs?", data: {tooltip: true} %><br>
+    <%= f.label :founded %><br>
     <%= f.text_field :founded %>
   </div>
   <div class="field">
@@ -25,18 +26,17 @@
   </div>
   <div class="field">
     <%= f.label :logo %><br>
-    <%= f.text_field :logo %> 
+    <%= f.text_field :logo %>
   </div>
+  <!-- /end unique startup attributes -->
 
   <div class="register-form" id="startup-account-form">
     <%= f.fields_for :account do |builder| %>
-
       <%= render "account_fields", :f => builder %>
-
     <% end %>
   </div>
-
   <div class="action">
     <%= f.submit "Save", class: "button radius" %>
   </div>
+  <!-- /end common attributes between interns and startups -->
 <% end %>

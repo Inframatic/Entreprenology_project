@@ -1,7 +1,5 @@
-<h1>All Interns // Intern's View of Map</h1>
+<h1>Intern's View of Map</h1>
 
 <% @interns.each do |intern| %>
-  <p>
-    <%= intern[:first_name] %>, <%= intern[:last_name] %>, <%= intern[:dob] %>
-  </p>
+  <p><%= intern[:first_name] %>, <%= intern[:last_name] %>, <%= intern[:dob] %></p>
 <% end %>

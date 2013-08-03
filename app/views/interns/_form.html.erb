@@ -25,14 +25,10 @@
 
   <div class="register-form" id="intern-account-form">
     <%= f.fields_for :account do |builder| %>
-
       <%= render "account_fields", :f => builder %>
-
     <% end %>
   </div>
-
   <div class="actions">
     <%= f.submit "Save", class: "button radius" %>
   </div>
-
 <% end %>
