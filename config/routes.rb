@@ -1,7 +1,12 @@
 Entreprenologyproject::Application.routes.draw do
-	resources :accounts
+  get "favourited_lists/index"
+  get "favourited_lists/edit"
+	resources :accounts do
+    resources :favourited_list
+  end
+
 	resources :interns
-	resources :startups do 
+	resources :startups do
     resources :internships do
       resources :internship_contacts, :except => [:index]
     end
