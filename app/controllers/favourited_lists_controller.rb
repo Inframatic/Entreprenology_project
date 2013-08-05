@@ -1,8 +1,8 @@
 class FavouritedListsController < ApplicationController
-  def index
+  def show
+    @favourited_list = FavouritedList.find(params[:favouritable_id])
   end
 
   def edit
-
   end
 end
