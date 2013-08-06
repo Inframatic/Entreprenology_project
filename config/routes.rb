@@ -1,4 +1,4 @@
-Entreprenologyproject::Application.routes.draw do
+Entreprenology::Application.routes.draw do
   get "favourited_lists/index"
   get "favourited_lists/edit"
 	resources :accounts do

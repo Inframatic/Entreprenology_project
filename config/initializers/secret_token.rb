@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Entreprenologyproject::Application.config.secret_key_base = 'b03088c30037b4a52fad942c52e83807afeac27f8ef41e4e674a0dcdc17975e4730b62e9fb7f984958a1b21472cce3afa85df782963d778fe5c965e112f14ea3'
+Entreprenology::Application.config.secret_key_base = 'b03088c30037b4a52fad942c52e83807afeac27f8ef41e4e674a0dcdc17975e4730b62e9fb7f984958a1b21472cce3afa85df782963d778fe5c965e112f14ea3'
