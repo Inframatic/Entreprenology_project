@@ -1,5 +1,5 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+class ApplicationController < ActionController::API
+  #protect_from_forgery with: :exception
    helper_method :current_user
 
   private
@@ -7,4 +7,4 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= Account.find(session[:account_id]) if session[:account_id]
   end
-end
+end  
