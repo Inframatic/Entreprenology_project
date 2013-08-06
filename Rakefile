@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Entreprenologyproject::Application.load_tasks
+Entreprenology::Application.load_tasks
