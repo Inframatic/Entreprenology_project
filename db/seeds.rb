@@ -5,23 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Startup.create!(
-  :company_name  => "Apple",
-  :number_of_employees => "60000",
-  :founded => "1978",
+
+@orange = Startup.create!(
+  :company_name => "Orange",
+  :number_of_employees => "30000",
+  :founded => "1997",
   :logo => "N/A"
 )
 
-Startup.create!(
-  :company_name  => "Apple",
-  :number_of_employees => "60000",
-  :founded => "1978",
-  :logo => "N/A"
-)
 
-Startup.create!(
-  :company_name  => "Apple",
-  :number_of_employees => "60000",
-  :founded => "1978",
-  :logo => "N/A"
-)
+@orange.internships.create!(
+  :position_description => "Intern will have to assist in tracking our assets through the city.",
+  :requirements => "Candidate should be well versed in spanish.",
+  :start_date => "2014-05-10",
+  :end_date => "2014-08-30"
+  )
+
+@orange.internships.first.create_internship_contact(
+  :first_name => "Venkateshwar",
+  :last_name => "Raman",
+  :email => "vkt.ramanayan@ganeshwar.com"
+  )
