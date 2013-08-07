@@ -3,6 +3,8 @@ class FavouritedListsController < ApplicationController
     @favourited_list = FavouritedList.find(params[:favouritable_id])
   end
 
+
   def edit
   end
+
 end

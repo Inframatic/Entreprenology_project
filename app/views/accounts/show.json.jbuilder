@@ -1,0 +1,1 @@
+json.extract! @account, :email, :industry, :country, :city, :postal_code, :description

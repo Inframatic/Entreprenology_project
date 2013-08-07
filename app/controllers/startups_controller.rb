@@ -1,18 +1,24 @@
 class StartupsController < ApplicationController
+  respond_to :json
+  
 
   def index
     @startups = Startup.all
+     respond_with(@startup)
   end
 
 
   def show
     @startup = Startup.find(params[:id])
+    respond_with(@startup)
   end
+
 
   def new
     @startup = Startup.new
     @startup.build_account(params[:account])
   end
+
 
   def create
     @startup = Startup.new(startup_params)
@@ -23,9 +29,11 @@ class StartupsController < ApplicationController
     end
   end
 
+
   def edit
     @startup = Startup.find(params[:id])
   end
+
 
   def update
     @startup = Startup.find(params[:id])
@@ -41,6 +49,7 @@ class StartupsController < ApplicationController
     @startup = Startup.find(params[:id])
     @startup.destroy
   end
+
 
   private
 

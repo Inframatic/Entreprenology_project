@@ -1,11 +1,15 @@
 class InternshipsController < ApplicationController
+  respond_to :json
 
+  
   def index
     @internships = Internship.all
+    respond_with(@internship)
   end
 
   def show
     @internship = Internship.find(params[:id])
+    respond_with(@internship)
   end
 
   def new

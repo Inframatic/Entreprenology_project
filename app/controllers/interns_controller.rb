@@ -1,17 +1,24 @@
 class InternsController < ApplicationController
+  respond_to :json
 
+  
   def index
     @interns = Intern.all
+    respond_with(@intern)
   end
+
 
   def show
     @intern = Intern.find(params[:id])
+    respond_with(@intern)
   end
+
 
   def new
     @intern = Intern.new
     @intern.build_account(params[:account])
   end
+
 
   def create
     @intern = Intern.new(intern_params)
@@ -37,10 +44,13 @@ class InternsController < ApplicationController
     end
   end
 
+
   def destroy
     @intern = Intern.find(params[:id])
     @intern.destroy
   end
+
+
 
   private
 
@@ -49,4 +59,5 @@ class InternsController < ApplicationController
      [:email, :industry, :country, :city, :postal_code,
       :description, :password])
   end
+
 end

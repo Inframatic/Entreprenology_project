@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
  	def create
   	@account = Account.authenticate(params[:email], params[:password])
     if @account 
@@ -9,8 +10,10 @@ class SessionsController < ApplicationController
     end
   end
 
+
   def destroy
     session[:account_id] = nil
     # render some.json.jbuilder
   end
+
 end

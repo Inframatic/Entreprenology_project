@@ -1,0 +1,1 @@
+json.extract! @intern, :first_name, :last_name, :dob
