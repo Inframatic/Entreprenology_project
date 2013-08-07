@@ -1,27 +1,32 @@
 class InternshipsController < ApplicationController
+  respond_to :json
 
   def index
-    @internships = Internship.all
+    respond_with Internship.all
   end
 
   def show
-    @internship = Internship.find(params[:id])
+    respond_with Internship.find(params[:id])
   end
 
   def new
-    @internship = Internship.new
+    respond_with Internship.new
   end
 
   def create
     @internship = Internship.new(params[:id])
+    @internship.save
+    respond_with @internship
   end
 
   def edit
-    @internship = Internship.find(params[:id])
+    respond_with Internship.find(params[:id])
   end
 
   def update
     @internship = Internship.find(params[:id])
+    @internship.update_attributes(params[:internship])
+    respond_with @internship
   end
 
   def destroy

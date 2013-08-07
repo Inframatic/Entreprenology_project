@@ -1,26 +1,33 @@
 class InternshipContactsController < ApplicationController
+  respond_to :json 
 
   def show
-    @internship_contact = InternshipContact.find(params[:id])
+    respond_with InternshipContact.find(params[:id])
   end
 
   def new
-    @internship_contact = InternshipContact.new
+    respond_with InternshipContact.new
   end
 
   def create
-    @internship_contact = InternshipContact.new
+    @internship_contact = InternshipContact.new(params[:id])
+    @internship_contact.save
+    respond_with @internship_contact
   end
 
   def edit
-    @internship_contact = InternshipContact.find(params[:id])
+    respond_with InternshipContact.find(params[:id])
   end
 
   def update
     @internship_contact = InternshipContact.find(params[:id])
+    @internship_contact.update_attributes(params[:internship_contact])
+    respond_with @internship_contact
   end
 
   def destroy
     @internship_contact = InternshipContact.find(params[:id])
+    @internship_contact.destroy
+    respond_with @internship_contact
   end
 end
