@@ -1,42 +1,45 @@
 class InternsController < ApplicationController
-  respond_to :json
 
   def index
-    respond_with Intern.all
+    @interns = Intern.all
   end
 
   def show
-    respond_with Intern.find(params[:id])
+    @intern = Intern.find(params[:id])
   end
 
   def new
     @intern = Intern.new
     @intern.build_account(params[:account])
-    respond_with @intern
   end
 
   def create
     @intern = Intern.new(intern_params)
-    @intern.save
-    respond_with @intern
+    if @intern.save
+      # render some.json.jbuilder
+    else
+      # render new.json.jbuilder
+    end
   end
 
 
   def edit
-    respond_with Intern.find(params[:id])
+    @intern = Intern.find(params[:id])
   end
 
 
   def update
     @intern = Intern.find(params[:id])
-    @intern.update_attributes(params[:intern])
-    respond_with @intern
+    if @intern.update(account_params[:intern])
+      # render some.json.jbuilder
+    else
+      # render edit.json.jbuilder
+    end
   end
 
   def destroy
     @intern = Intern.find(params[:id])
     @intern.destroy
-    respond_with @intern
   end
 
   private

@@ -1,31 +1,30 @@
 class AccountsController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  respond_to :json
-
 
 	def show
-    respond_with Account.find(params[:id])
+    @account = Account.find(params[:id])
 	end
 
   def new
-    respond_with Account.new
+    @account = Account.new
   end
 
   def create
     @account = Account.new(account_params)
-    @account.save
-    AccountMailer.registration_confirmation(@account).deliver
-    respond_with @account
+    if @account.save
+      AccountMailer.registration_confirmation(@account).deliver
+      # render some.json.jbuilder
+    else
+      # render new.json.jbuilder
+    end
   end
 
   def edit
-    respond_with Account.find(params[:id])
+    @account = Account.find(params[:id])
   end
 
   def update
-
     @account.update(account_params)
-    respond_with @account
  end
 
   private

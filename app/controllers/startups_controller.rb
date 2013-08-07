@@ -1,43 +1,45 @@
 class StartupsController < ApplicationController
-  respond_to :json
 
   def index
-    respond_with Startup.all
+    @startups = Startup.all
   end
 
 
   def show
-    respond_with Startup.find(params[:id])
+    @startup = Startup.find(params[:id])
   end
 
   def new
     @startup = Startup.new
     @startup.build_account(params[:account])
-
-    respond_with @startup
   end
 
   def create
     @startup = Startup.new(startup_params)
-    @startup.save
-    respond_with @startup
+    if @startup.save
+      # render json something
+    else
+      # render new.json.jbuilder
+    end
   end
 
   def edit
-    respond_with Startup.find(params[:id])
+    @startup = Startup.find(params[:id])
   end
 
   def update
     @startup = Startup.find(params[:id])
-    @startup.update_attributes(params[:startup])
-    respond_with @startup
+    if @startup.update_attributes(params[:startup])
+      # render some.json.jbuilder
+    else
+      # render edit.json.jbuilder
+    end
   end
 
 
   def destroy
     @startup = Startup.find(params[:id])
     @startup.destroy
-    respond_with @startup
   end
 
   private
