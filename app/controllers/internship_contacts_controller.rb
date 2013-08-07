@@ -27,7 +27,5 @@ class InternshipContactsController < ApplicationController
 
   def destroy
     @internship_contact = InternshipContact.find(params[:id])
-    @internship_contact.destroy
-    respond_with @internship_contact
   end
 end
