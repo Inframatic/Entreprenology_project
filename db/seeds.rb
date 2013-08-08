@@ -13,6 +13,8 @@
 
 @tim_burton.create_account(
   :email => "t.bizzle@gdrizzle.com",
+  :password => "password",
+  :password_confirmation => "password",
   :industry => "Films",
   :country => "U.S.A.",
   :city => "L.A.",
@@ -28,6 +30,8 @@
 
 @yeezus.create_account(
   :email => "yeezy@west.com",
+  :password => "password",
+  :password_confirmation => "password",
   :industry => "Music",
   :country => "U.S.A.",
   :city => "L.A.",
@@ -44,6 +48,8 @@
 
 @orange.create_account(
   :email => "sup@orange.co",
+  :password => "password",
+  :password_confirmation => "password",
   :industry => "Banking",
   :country => "U.S.A.",
   :city => "Colorado",
@@ -54,6 +60,7 @@
 @orange.internships.create!(
   :position_description => "Intern will have to assist in tracking our assets through the city.",
   :requirements => "Candidate should be well versed in spanish.",
+  :remuneration => true,
   :start_date => "2014-05-10",
   :end_date => "2014-08-30"
 )
@@ -73,6 +80,8 @@
 
 @cherry.create_account(
   :email => "come.talk.to.me@cherry.io",
+  :password => "password",
+  :password_confirmation => "password",
   :industry => "Food",
   :country => "Barbados",
   :city => "Bridgetown",
