@@ -1,1 +1,1 @@
-json.extract! @startup, :company_name, :logo, :number_of_employees, :founded
+json.extract! @account, :email, :industry, :country, :city, :postal_code, :description

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130805185759) do
+ActiveRecord::Schema.define(version: 20130808005238) do
 
   create_table "accounts", force: true do |t|
     t.string   "email"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20130805185759) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "logable_id"
-    t.string   "logable_type"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.integer  "logable_id"
+    t.string   "logable_type"
   end
 
   create_table "favourited_lists", force: true do |t|
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20130805185759) do
   create_table "interns", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "dob"
+    t.date     "dob",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20130805185759) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "internship_id"
   end
 
   create_table "internships", force: true do |t|
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20130805185759) do
     t.boolean  "remuneration"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "startup_id"
   end
 
   create_table "startups", force: true do |t|
