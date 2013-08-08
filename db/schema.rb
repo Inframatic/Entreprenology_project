@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808005238) do
+ActiveRecord::Schema.define(version: 20130808014106) do
 
   create_table "accounts", force: true do |t|
     t.string   "email"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20130808005238) do
     t.integer  "logable_id"
     t.string   "logable_type"
   end
+
+  add_index "accounts", ["logable_id", "logable_type"], name: "index_accounts_on_logable_id_and_logable_type"
 
   create_table "favourited_lists", force: true do |t|
     t.integer  "favouritable_id"
