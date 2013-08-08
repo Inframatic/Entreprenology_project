@@ -8,4 +8,4 @@ class ApplicationController < ActionController::Base
     @current_user ||= Account.find(session[:account_id]) if session[:account_id]
   end
   
-end  
+end
