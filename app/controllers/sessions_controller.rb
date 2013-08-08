@@ -1,21 +1,19 @@
 class SessionsController < ApplicationController
-  def new
-    @account = Account.new
-  end
-
-  def create
-    @account = Account.authenticate(params[:email], params[:password])
+  
+ 	def create
+  	@account = Account.authenticate(params[:email], params[:password])
     if @account 
       session[:account_id] = @account.id
-      redirect_to root_url, :notice => "Logged in!"
+      # render some.json.jbuilder
     else
-      flash.now.alert = "Invalid email or password"
-      render :new
+      # render something-else.json.jbuilder
     end
   end
 
+
   def destroy
     session[:account_id] = nil
-    redirect_to root_url, :notice => "Logged out"
+    # render some.json.jbuilder
   end
+
 end

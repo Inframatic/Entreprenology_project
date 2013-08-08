@@ -1,11 +1,10 @@
 class AccountsController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-
-	def show
-	end
-
-
+	# def show
+ #    @account = Account.find(params[:id])
+ #    respond_with(@account)
+	# end
   def new
     @account = Account.new
   end
@@ -13,39 +12,23 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(account_params)
-      if @account.save
-        AccountMailer.registration_confirmation(@account).deliver
-        redirect_to accounts_url, :notice => "Signed up!"
-      else
-        render "new"
-      end
+    if @account.save
+      AccountMailer.registration_confirmation(@account).deliver
+      # render some.json.jbuilder
+    else
+      # render new.json.jbuilder
+    end
   end
+
 
   def edit
-    @account = current_user
+    @account = Account.find(params[:id])
   end
-	# def edit
- #    @account = Account.find(params[:id])
-	# end
+
 
   def update
-    respond_to do |format|
-      if @account.update(account_params)
-        format.html { redirect_to @account, notice: 'Account was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
-    end
- end
-  # def update
- #    @account = current_account.accounts.find(params[:id])
- #    @account.update_attributes!(account_params)
- 
-	# end
-
-
-	def destroy
-	end
+    @account.update(account_params)
+  end
 
 
   private
@@ -54,6 +37,7 @@ class AccountsController < ApplicationController
         @account = current_user
     end
     
+
     def account_params
       params.require(:account).permit(:password, :email, :industry, :country,
         :city, :postal_code, :description)
