@@ -18,20 +18,6 @@ Entreprenology::Application.routes.draw do
 	resources :sessions, :only => [:new, :create, :destroy]
 
 	root :to => 'welcome#root'
-  match '*anything' => "welcome#root"
+  # match '*anything' => "welcome#root"
 
 end
-
-NgPhotogur::Application.routes.draw do
-
-  
-  # get "log_in" => "sessions#new", :as => "log_in"
-  # get "log_out" => "sessions#destroy", :as => "log_out"
-  # get "sign_up" => "users#new", :as => "sign_up"
-  # #get "my_account" => "users#show", :as => "my_account"
-  # get "my_account" => "users#edit", :as => "my_account"
-
-  # get "main/index"
-
-  # resources :users
-  # resources :sessions

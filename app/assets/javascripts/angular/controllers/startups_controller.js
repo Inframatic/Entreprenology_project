@@ -1,17 +1,7 @@
 @entreprenology.controller 'StartupsController', ($scope, Startup, $location) -> 
   
-  $scope.startups = Startup.query()
-
-  $scope.createStartup = ->
-    console.log "Creating..."
-    new Startup($scope.startup).$save onStartupSave
-
-  onStartupSave = ->  
-    $location.path('/startups')
-    console.log "Done!"
-
-  // $scope.hoveredCompany;
-  // $scope.hovering = false;
+  $scope.hoveredStartup;
+  $scope.hovering = false;
 
   // $scope.firstInterviewList = [
   //   {firstinterview: 'yes'},
@@ -19,7 +9,8 @@
   // ];
   // $scope.statusList = [ 
   //   {"renumeration": 'Paid' },
-  //   {"renumeration": 'Volunteer' } ];
+  //   {"renumeration": 'Unpaid' } ];
+
   // $scope.companies = [
   //   {name:'Pizza Hut',industry:'Fun Industry', "renumeration": 'Volunteer', location: "New York", firstinterview: "yes", company_size: 100000, internship_info: "Grab your sword and fight the horde!", position_description: "You wil work. hard.", position_requirements: "Be smart", "keyworddescription": "After the Hamburglar was fired from McDonalds for burger theft, he invested 2.5 million dollars into the Fun industry and now it has become the booming Fun company you see today"},
   //   {name:'Heaven Inc.', industry:'Finance', "renumeration": 'Volunteer', location: "New York", firstinterview: "yes",  company_size: 1100, internship_info: "Lots of dancing", position_description: "You wil work. hard.", position_requirements: "Be smart", "keyworddescription": "I love money. Banks own everything, but who owns the bank? Heaven does bitches. I'm writing more so this box fills out."},
@@ -31,7 +22,17 @@
   //   {name:'LeanerSchnitzel',industry:'Healthy Corn Dogs', "renumeration": 'Paid', location: "Boston", firstinterview: "no",  company_size: 40, internship_info: "Lots of dancing", position_description: "You wil work. hard.", position_requirements: "Just don't be too dumb", "keyworddescription": "Our hotdogs are the largest and firmest hotdogs in all the land. We protect each hotdog with a cushy breading. So tasty nom nom nom" }
   //   ];
 
-  // $scope.showDetails = function(company) {
-  //   $scope.hoveredCompany = company;
-  //   $scope.hovering = true;
-  // }
+  $scope.showDetails = function(startup) {
+    $scope.hoveredStartup = startup;
+    $scope.hovering = true;
+  }
+
+  // $scope.startups = Startup.query()
+
+  // $scope.createStartup = ->
+  //   console.log "Creating..."
+  //   new Startup($scope.startup).$save onStartupSave
+
+  // onStartupSave = ->  
+  //   $location.path('/startups')
+  //   console.log "Done!"
