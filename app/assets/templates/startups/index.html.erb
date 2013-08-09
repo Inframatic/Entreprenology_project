@@ -1,31 +1,32 @@
-<div id="wrapper" data-ng-controller="StartupControl">
+
+<div id="wrapper" data-ng-controller="StartupsController">
 			<header>
 				<nav id="skipTo">
 					<ul>
 						<li>
 							<a href="#main" title="Skip to Main Content">Skip to Main Content</a>
-						</li>
-					</ul>
-				</nav>
-				<aside>
-			        <ul>
-			       	<section id="filter">
-			            <br>
-			            <p>Filter by:</p>
-			            <input type="text" data-ng-model="location" placeholder="Location"/> 
+				</li>
+			</ul>
+		</nav>
+		<aside>
+			<ul>
+			  <section id="filter">
+			    <br>
+			      <p>Filter by:</p>
+			      <input type="text" data-ng-model="city" placeholder="City"/> 
 
-			            <input type="text" data-ng-model="name" placeholder="Company Name"/> 
+			      <input type="text" data-ng-model="company_name" placeholder="Company Name"/> 
 
-			            <input type="text" data-ng-model="industry" placeholder="Industry"/> 
+			      <input type="text" data-ng-model="industry" placeholder="Industry"/> 
 
-			            <input type="text" data-ng-model="keyworddescription" placeholder="Keyword"/> 
+			      <input type="text" data-ng-model="description" placeholder="Keyword"/> 
 
-			            <select ng-model="intern" ng-options="status.renumeration for status in statusList | orderBy:'applicationStatus'">
+<!-- 			            <select ng-model="intern" ng-options="status.renumeration for status in statusList | orderBy:'applicationStatus'">
 			                <option value="">Paid/Volunteer</option>
 			            </select>
 			            <select ng-model="intern" ng-options="interviewstatus.firstinterview for interviewstatus in firstInterviewList | orderBy:'applicationStatus'">
 			                <option value="">1st Interview</option>
-			            </select>
+			            </select> -->
 			            <p></p>
 			        </section>
 			        </ul>
@@ -38,22 +39,17 @@
 				<p></p>
 				<h3>Description:</h3> 
 				<p></p>
-				{{hoveredCompany.keyworddescription}}<br>
+				{{hoveredStartup.description}}<br>
 				<p></p>
 				<p></p>
 				<h3>Internship Information:</h3>
 				<p></p>
-				{{hoveredCompany.internship_info}}<br>
-				<p></p>
-				<p></p>
-				<h3>Poisition Description:</h3>
-				<p></p>
-				{{hoveredCompany.position_description}}<br>
+				{{hoveredStartup.internships.first.postion_description}}<br>
 				<p></p>
 				<p></p>
 				<h3>Position Requirements</h3>
 				<p></p>
-				{{hoveredCompany.position_requirements}}<br>
+				{{hoveredStartup.internships.first.requirements}}<br>
 				<p></p>
 				<p></p>
 			</div>
@@ -61,10 +57,10 @@
 
 			
 			</header>	
-		
+		<!--filter:paid | filter:intern| -->
 			<section id="main">
-	            	<ul id="profile_container" data-ng-repeat="company in companies |filter:name| filter:paid | filter:intern| filter:industry| filter:location| filter:keyworddescription| filter: firstinterview">
-	                    <li ng-mouseover="showDetails(company)" id="proflist">
+	            	<ul id="profile_container" data-ng-repeat="startup in startups |filter:company_name|  filter:industry| filter:city| filter:country| filter:description">
+	                    <li ng-mouseover="showDetails(startup)" id="proflist">
 	                    <h2>
 							<center>
 							  <div class="container">
@@ -74,12 +70,12 @@
 							  </div>
 							</center>	
 		            	</h2>
-	                    <h1>{{company.name}}</h1><br>
-		                    {{company.renumeration}}<br>
+	                    <h1>{{company_name}}</h1><br>
+		                    {{startup.renumeration}}<br>
 		                    <p></p>
-		                    Location: {{company.location}}<br>
-		                    <h2>{{company.industry}}</h2>
-		                    Description: {{company.keyworddescription}}<br>
+		                    Location: {{startup.city}}<br>
+		                    <h2>{{startup.industry}}</h2>
+		                    Description: {{startup.description}}<br>
 		                </li>
 	                </ul>
 			</section>

@@ -17,7 +17,7 @@ Entreprenology::Application.routes.draw do
 
 	resources :sessions, :only => [:new, :create, :destroy]
 
-	root :to => 'welcome#root'
-  # match '*anything' => "welcome#root"
+	root :to => 'welcome#index'
+  get '*anything' => "welcome#index"
 
 end

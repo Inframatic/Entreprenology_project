@@ -10,11 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 
-
 // VENDOR LIBRARIES
-//= require angular.min
-//= require angular-resource.min
-//= require angle-up
+//= require angular
+//= require angular-resource
 //= require hamlcoffee
 //= require jquery
 //= require jquery_ujs
@@ -37,11 +35,10 @@
 //= require foundation/foundation.abide
 
 // APPLICATION FILES
+//= require_tree ./angular
 //= require_tree ../templates
 //= require ./angular/initialize
 //= require turbolinks
-//= require_tree ./angular
 //= require_tree .
-
 
 $(function(){ $(document).foundation(); });
