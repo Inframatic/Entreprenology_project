@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   
+
+  
+
  	def create
   	@account = Account.authenticate(params[:email], params[:password])
     if @account 

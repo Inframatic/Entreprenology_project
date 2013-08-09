@@ -1,7 +1,6 @@
-class InternshipContactsController < ApplicationController
-  respond_to :json
+class Api::InternshipContactsController < Api::BaseController
+  # respond_to :json
 
-  
   def show
     @internship_contact = InternshipContact.find(params[:id])
     respond_with(@internship_contact)

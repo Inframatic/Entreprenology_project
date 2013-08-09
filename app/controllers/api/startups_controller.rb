@@ -1,16 +1,15 @@
-class StartupsController < ApplicationController
-  respond_to :json
+class Api::StartupsController < Api::BaseController
+  # respond_to :json
   
-
   def index
     @startups = Startup.all
-     respond_with(@startup)
+    respond_with @startups
   end
 
 
   def show
     @startup = Startup.find(params[:id])
-    respond_with(@startup)
+    respond_with @startup
   end
 
 

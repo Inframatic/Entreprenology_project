@@ -1,7 +1,6 @@
-class InternsController < ApplicationController
-  respond_to :json
+class Api::InternsController < Api::BaseController
+  # respond_to :json
 
-  
   def index
     @interns = Intern.all
     respond_with(@intern)

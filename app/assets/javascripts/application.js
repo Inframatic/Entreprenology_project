@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./assets/javascripts/angular
-//= require vendor/javascripts/angular
+
 //= require foundation/foundation
 //= require foundation/foundation.alerts
 //= require foundation/foundation.clearing
@@ -31,6 +30,7 @@
 //= require foundation/foundation.placeholder
 //= require foundation/foundation.abide
 //= require turbolinks
+//= require_tree ./angular
 //= require_tree .
 
 

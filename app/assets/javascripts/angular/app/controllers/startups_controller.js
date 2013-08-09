@@ -1,5 +1,4 @@
-
-function BusinessCtrl($scope) {
+@entreprenology.controller 'StartupsController', ($scope) {
   $scope.hoveredCompany;
   $scope.hovering = false;
 
