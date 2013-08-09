@@ -5,4 +5,5 @@ class Intern < ActiveRecord::Base
 
   accepts_nested_attributes_for :account
   validates :first_name, :last_name, :dob, :presence => true
+  
 end

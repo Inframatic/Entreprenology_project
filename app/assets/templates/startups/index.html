@@ -1,4 +1,16 @@
-<div id="wrapper" data-ng-controller="StartupControl">
+%h2{:"ng-show" => "startups.length > 1"}  There are tons of startups! ^_^
+%h2{:"ng-show" => "startups.length == 1"} There is only 1 startup :/
+%h2{:"ng-show" => "startups.length == 0"} There are no startups :(
+
+%a{:href => "/startups/new"} New Startup
+
+.startup{:"ng-repeat" => "startup in startups"}
+  %a{href: "startups/{{ $index+1 }}"}
+    %h2 {{startup.title}}
+  
+  %img{:src => "{{startup.url}}"}
+
+<!-- <div id="wrapper" data-ng-controller="StartupControl">
 		
 			<header>
 				<nav id="skipTo">
@@ -60,7 +72,6 @@
 			</div>
 			</section>
 
-				<!-- NAV GOES HERE -->
 			
 			</header>	
 		
@@ -81,7 +92,7 @@
 		                    <p></p>
 		                    Location: {{company.location}}<br>
 		                    <h2>{{company.industry}}</h2>
-<!-- 		                    Description: {{company.keyworddescription}}<br> -->
+		                    Description: {{company.keyworddescription}}<br>
 		                </li>
 	                </ul>
 			</section>

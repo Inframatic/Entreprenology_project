@@ -1,5 +1,5 @@
 class Api::InternshipsController < Api::BaseController
-  # respond_to :json
+  respond_to :json
 
   def index
     @internships = Internship.all
