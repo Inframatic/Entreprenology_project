@@ -1,4 +1,4 @@
-@entreprenology.controller 'StartupsController', ($scope) {
+@entreprenology.controller 'StartupsController', ($scope, Startup, $location) -> 
   $scope.hoveredCompany;
   $scope.hovering = false;
 
@@ -24,6 +24,14 @@
       $scope.hoveredCompany = company;
       $scope.hovering = true;
     }
-}
+  
+  $scope.startups = Startup.query()
 
+  $scope.createStartup = ->
+    console.log "Creating..."
+    new Startup($scope.startup).$save onStartupSave
+
+  onStartupSave = ->  
+    $location.path('/startups')
+    console.log "Done!"
 

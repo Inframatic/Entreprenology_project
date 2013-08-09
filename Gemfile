@@ -16,6 +16,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem 'haml-rails'
+gem 'haml'
+gem 'haml_coffee_assets'
 
 # Embed the V8 Javascript Interpreter into Ruby:  https://github.com/cowboyd/therubyracer
 gem 'therubyracer', platforms: :ruby
