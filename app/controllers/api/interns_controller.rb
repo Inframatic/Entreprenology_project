@@ -3,7 +3,7 @@ class Api::InternsController < Api::BaseController
 
   def index
     @interns = Intern.all
-    respond_with(@intern)
+    respond_with @interns
   end
 
 
@@ -36,7 +36,7 @@ class Api::InternsController < Api::BaseController
 
   def update
     @intern = Intern.find(params[:id])
-    if @intern.update(account_params[:intern])
+    if @intern.update_attributes(account_params[:intern])
       # render some.json.jbuilder
     else
       # render edit.json.jbuilder
