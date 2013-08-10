@@ -17,6 +17,7 @@
         <input type="text" ng-model="description" placeholder="Keyword"/>
       </section>
     </aside>
+    
     <section id="company_info">
       <div ng-show="hovering" >
         <a class='read-more alt2' href="#"><span>&gt;</span> Apply</a>
