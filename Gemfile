@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
 gem 'haml-rails'
 gem 'haml'
 gem 'haml_coffee_assets'
@@ -35,9 +36,6 @@ gem 'zurb-foundation'
 # you need this or you get an error
 gem "compass-rails", "~> 2.0.alpha.0"
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-# gem 'turbolinks'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -47,6 +45,8 @@ gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  # Use debugger
+# gem 'debugger', group: [:development, :test]
 end
 
 # Use unicorn as the app server
@@ -55,5 +55,4 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+

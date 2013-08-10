@@ -8,8 +8,7 @@
     # .when('/startups/new',      templateUrl: "startups/new",   controller: "StartupsController")
     # .when('/startups/:id',      templateUrl: "startups/show",  controller: "StartupsController")
     # .when('/startups/:id/edit', templateUrl: "startups/edit",  controller: "StartupsController")
-    .otherwise(template: 'adsf')
-    #.otherwise(redirect: '/')
+    .otherwise(redirect: '/')
 
 @entreprenology.run ['$window','$templateCache', ($window, $templateCache) ->
   for name, templateFunction of $window.JST
@@ -18,3 +17,6 @@
 
 @entreprenology.factory 'Startup', ($resource) ->
   $resource "/api/startups.json", {index: {method: "GET"}}
+
+@entreprenology.factory 'Intern', ($resource) ->
+  $resource "/api/interns.json", {index: {method: "GET"}}
