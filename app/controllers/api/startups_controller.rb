@@ -1,5 +1,4 @@
 class Api::StartupsController < Api::BaseController
-  respond_to :json
   
   def index
     @startups = Startup.all

@@ -4,9 +4,9 @@
   $locationProvider.html5Mode(true)
   $routeProvider
     .when('/startups',          templateUrl: "startups/index",   controller: "StartupsController")
+    .when('/startups/:id',      templateUrl: "startups/edit",  controller: "StartupsController")
     .when('/interns',      templateUrl: "interns/index",   controller: "InternsController")
-    # .when('/startups/:id',      templateUrl: "startups/show",  controller: "StartupsController")
-    # .when('/startups/:id/edit', templateUrl: "startups/edit",  controller: "StartupsController")
+    # .when('/interns/:id/edit', templateUrl: "interns/edit",  controller: "InternsController")
     .otherwise(redirect: '/')
 
 @entreprenology.run ['$window','$templateCache', ($window, $templateCache) ->
@@ -14,8 +14,15 @@
     $templateCache.put(name, templateFunction())
 ]
 
+# Startup
 @entreprenology.factory 'Startup', ($resource) ->
   $resource "/api/startups.json", {index: {method: "GET"}}
 
+@entreprenology.factory 'Startup', ($resource) ->
+  $resource "/api/startups.json", {edit: {method: "GET"}}
+
+
+# Intern
 @entreprenology.factory 'Intern', ($resource) ->
   $resource "/api/interns.json", {index: {method: "GET"}}
+
