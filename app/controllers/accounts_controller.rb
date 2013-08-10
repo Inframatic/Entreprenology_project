@@ -1,10 +1,6 @@
 class AccountsController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-	# def show
- #    @account = Account.find(params[:id])
- #    respond_with(@account)
-	# end
   def new
     @account = Account.new
   end
