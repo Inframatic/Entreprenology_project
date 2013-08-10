@@ -1,4 +1,4 @@
-<div id="wrapper" data-ng-controller="InternsController">
+<div id="wrapper" ng-controller="InternsController">
   <header>
     <nav id="skipTo">
       <ul>
@@ -12,13 +12,12 @@
         <section id="filter">
           <br />
           <p>Filter by:</p>
-          <input type="text" data-ng-model="name" placeholder="Name"/> 
-          <input type="text" data-ng-model="location" placeholder="Location"/> 
-          <input type="text" data-ng-model="industry" placeholder="Industry"/> 
-          <input type="text" data-ng-model="description" placeholder="Keyword"/> 
-          <select ng-model="intern" ng-options="intern.paidvolunteer for intern in internList | orderBy:'applicationStatus'">
-            <option value="">Paid/Volunteer</option>
-          </select>
+          <input type="text" ng-model="first_name" placeholder="Name"/> 
+          <input type="text" ng-model="city" placeholder="City"/>
+          <input type="text" ng-model="first_name" placeholder="Name"/> 
+          <input type="text" ng-model="country" placeholder="Country"/>
+          <input type="text" ng-model="industry" placeholder="Industry"/> 
+          <input type="text" ng-model="description" placeholder="Keyword"/> 
           <p></p>
         </section>
       </ul>
@@ -34,16 +33,18 @@
         {{hoveredIntern.description}}<<br>
         <p></p>
         <h2>{{hoveredIntern.email}}</h2>
+
       </div>
+
     </section>
+
   </header> 
   
   <section id="main">
-    <ul id="profile_container" data-ng-repeat="intern in interns |filter:name| filter:paid | filter:intern| filter:industry| filter:location| filter:description| filter:email | filter: firstinterview">
-      <li ng-mouseover="showDetails(intern)" id="proflist">
+    <ul id="profile_container"> 
+      <li ng-mouseover="showDetails(intern)" id="proflist" ng-repeat="intern in interns |filter:email| filter:first_name| filter:last_name| filter:industry| filter:city| filter:description">
         <h1>{{intern.first_name}} {{intern.last_name}}</h1>
         <br />
-        {{intern.paidvolunteer}}<br>
         <p></p>
         {{intern.city}}, {{intern.country}}
         <br />

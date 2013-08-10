@@ -45,9 +45,10 @@
       </div>
     </section>
   </header>  
+
   <section id="main">
     <ul id="profile_container">
-      <li ng-mouseover="showDetails(startup)" id="proflist" ng-repeat="startup in startups |filter:company_name|  filter:industry| filter:city| filter:country| filter:description">
+      <li ng-mouseover="showDetails(startup)" id="proflist" ng-repeat="startup in startups |filter:company_name| filter:industry| filter:city| filter:country| filter:description">
         <h2>
           <center>
             <div class="container">
@@ -58,8 +59,9 @@
           </center>  
         </h2>
         <h1>{{startup.company_name}}</h1>
-        <br >
-        {{startup.remuneration}}<br />
+        <br />
+        {{startup.remuneration}}
+        <br />
         <p></p>
         Location: {{startup.city}}
         <br />
