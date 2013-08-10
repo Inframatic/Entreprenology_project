@@ -4,7 +4,7 @@
   $locationProvider.html5Mode(true)
   $routeProvider
     .when('/startups',          templateUrl: "startups/index",   controller: "StartupsController")
-    .when('/interns',      templateUrl: "interns/index",   controller: "InternssController")
+    .when('/interns',      templateUrl: "interns/index",   controller: "InternsController")
     # .when('/startups/:id',      templateUrl: "startups/show",  controller: "StartupsController")
     # .when('/startups/:id/edit', templateUrl: "startups/edit",  controller: "StartupsController")
     .otherwise(redirect: '/')
