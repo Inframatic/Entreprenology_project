@@ -1,0 +1,8 @@
+<div id="wrapper" ng-controller="StartupsController">
+
+  <h1>Edit Startup Profile</h1>
+    <p><%= link_to "Back to Startup Profile Page", @intern, class: "button radius" %></p>
+    <div class="register-form">
+  <%= render 'form' %>
+  
+</div>

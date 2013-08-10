@@ -1,4 +1,5 @@
 <div id="wrapper" ng-controller="StartupsController">
+
   <header>
     <nav id="skipTo">
       <ul>
@@ -71,4 +72,5 @@
       </li>
     </ul>
   </section>
+  
 </div>

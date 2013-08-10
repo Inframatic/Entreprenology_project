@@ -1,0 +1,48 @@
+<div id="wrapper" ng-controller="StartupsController">
+
+  <%= form_for @startup do |f| %>
+    <div class="form" id="startup-form">
+    <% if @startup.errors.any? %>
+      <div class="error_message">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @startup.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <!-- /end validation error messages -->
+
+
+    <div class="field">
+      <%= f.label :company_name %><br>
+      <%= f.text_field :company_name %>
+    </div>
+    <div class="field">
+      <%= f.label :founded %><br>
+      <%= f.text_field :founded %>
+    </div>
+    <div class="field">
+      <%= f.label :number_of_employees %><br>
+      <%= f.text_field :number_of_employees %> 
+    </div>
+    <div class="field">
+      <%= f.label :logo %><br>
+      <%= f.text_field :logo %>
+    </div>
+    <!-- /end unique startup attributes -->
+
+
+    <div class="register-form" id="startup-account-form">
+      <%= f.fields_for :account do |builder| %>
+        <%= render "account_fields", :f => builder %>
+      <% end %>
+    </div>
+    <div class="action">
+      <%= f.submit "Save", class: "button radius" %>
+    </div>
+    <!-- /end common attributes between interns and startups -->
+  <% end %>
+
+</div>

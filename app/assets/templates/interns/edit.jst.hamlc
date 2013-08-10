@@ -1,0 +1,10 @@
+<div id="wrapper" ng-controller="InternsController">
+
+  <h1>Edit Intern Profile</h1>
+  <p><%= link_to "Back to Intern Profile", @intern, class: "button radius" %></p>
+
+  <div class="register-form">
+    <%= render 'form' %>
+  </div>
+
+</div>

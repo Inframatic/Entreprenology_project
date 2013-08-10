@@ -6,3 +6,4 @@
   $scope.showDetails = (intern) ->
     $scope.hoveredIntern = intern
     $scope.hovering = yes
+
