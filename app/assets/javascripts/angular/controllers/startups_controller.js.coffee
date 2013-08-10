@@ -1,9 +1,8 @@
 @entreprenology.controller 'StartupsController', ($scope, Startup, $location) ->
+  $scope.startups = Startup.query ->
+    $scope.hoveredStartup = $scope.startups[0]
+  $scope.hovering = no
 
-$scope.startups = Startup.query()
-$scope.hoveredStartup
-$scope.hovering = false
-
-$scope.showDetails = (startup) ->
-  $scope.hoveredStartup = startup
-  $scope.hovering = true
+  $scope.showDetails = (startup) ->
+    $scope.hoveredStartup = startup
+    $scope.hovering = yes

@@ -1,0 +1,71 @@
+<div id="wrapper" ng-controller="StartupsController">
+  <header>
+    <nav id="skipTo">
+      <ul>
+        <li>
+          <a href="#main" title="Skip to Main Content">Skip to Main Content</a>
+        </li>
+      </ul>
+    </nav>
+    <aside>
+      <section id="filter">
+        <br />
+        <p>Filter by:</p>
+        <input type="text" ng-model="city" placeholder="City" />
+        <input type="text" ng-model="company_name" placeholder="Company Name"/>
+        <input type="text" ng-model="industry" placeholder="Industry"/>
+        <input type="text" ng-model="description" placeholder="Keyword"/>
+      </section>
+    </aside>
+    <section id="company_info">
+      <div ng-show="hovering" >
+        <a class='read-more alt2' href="#"><span>&gt;</span> Apply</a>
+        <img src="http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif" />
+        <br />
+        <p></p>
+        <h3>Description:</h3> 
+        <p></p>
+        {{hoveredStartup.description}}
+        <br />
+        <p></p>
+        <p></p>
+        <h3>Internship Information:</h3>
+        <p></p>
+        {{hoveredStartup.internships.first.postion_description}}
+        <br />
+        <p></p>
+        <p></p>
+        <h3>Position Requirements</h3>
+        <p></p>
+        {{hoveredStartup.internships.first.requirements}}
+        <br />
+        <p></p>
+        <p></p>
+      </div>
+    </section>
+  </header>  
+  <section id="main">
+    <ul id="profile_container">
+      <li ng-mouseover="showDetails(startup)" id="proflist" ng-repeat="startup in startups |filter:company_name|  filter:industry| filter:city| filter:country| filter:description">
+        <h2>
+          <center>
+            <div class="container">
+              <div class="button1b">
+                <div class="button1b-content"></div>
+              </div>
+            </div>
+          </center>  
+        </h2>
+        <h1>{{startup.company_name}}</h1>
+        <br >
+        {{startup.remuneration}}<br />
+        <p></p>
+        Location: {{startup.city}}
+        <br />
+        <h2>{{startup.industry}}</h2>
+        Description: {{startup.description}}
+        <br />
+      </li>
+    </ul>
+  </section>
+</div>
