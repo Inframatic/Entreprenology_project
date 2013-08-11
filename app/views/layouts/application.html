@@ -4,55 +4,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no />
+     <!-- /meta -->
+
     <title><%= content_for?(:title) ? yield(:title) : "Entreprenology" %></title>
-    <meta content="A new way to get an internship, with startups" name="Description">
-    <!-- /meta -->
 
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
     <!-- /mapbox API -->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script data-turbolinks-track="true" src=
-  "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.outside-adb76dec4615a5ab518fe65da519685a.js"></script>
     <link href=
     "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
     media="all" rel="stylesheet">
-    <!-- /zero_header -->
-
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
-    <%= stylesheet_link_tag    "startup" %>
+    <%= stylesheet_link_tag    :all %>
     <!-- /stylesheets -->
 
     <style>
       body { margin:0; padding:0; }
       #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
+
     <%= csrf_meta_tags %>
   </head>
-
 
   <body>
     <style>
       #geolocate {
-          background: #fff;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 158px;
-          margin-left: -80px;
-          z-index: 1000;
-          font: 13px/18px;
-          text-align: center;
-          padding: 10px 0;
-          color: #3C4E5A;
-          display: block;
-          border: 1px solid #BBB;
-          -webkit-border-radius: 3px;
-          border-radius: 3px;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 158px;
+        margin-left: -80px;
+        z-index: 1000;
+        font: 13px/18px;
+        text-align: center;
+        padding: 10px 0;
+        color: #3C4E5A;
+        display: block;
+        border: 1px solid #BBB;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
       }
 
       #geolocate:hover {
-          background: #ECF5FA;
+        background: #ECF5FA;
       }
     </style>
 
@@ -87,15 +82,15 @@
     <div class="large-4 columns"></div>
 
 
-
     <!-- JavaScript -->
-    < script type = 'text/javascript' >
-    var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
-    var gridLayer = L.mapbox.gridLayer('maptap.map-ljig9nyp');
-    map.addLayer(L.mapbox.tileLayer('maptap.map-ljig9nyp'));
-    map.addLayer(gridLayer);
-    map.addControl(L.mapbox.gridControl(gridLayer));
-    map.addControl(L.mapbox.geocoderControl('maptap.map-ljig9nyp')); < /script>
+    <script type='text/javascript'>
+      var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
+      var gridLayer = L.mapbox.gridLayer('maptap.map-ljig9nyp');
+      map.addLayer(L.mapbox.tileLayer('maptap.map-ljig9nyp'));
+      map.addLayer(gridLayer);
+      map.addControl(L.mapbox.gridControl(gridLayer));
+      map.addControl(L.mapbox.geocoderControl('maptap.map-ljig9nyp'));
+    </script>
 
 
     <script type="text/javascript">
@@ -134,11 +129,9 @@
           map.fitBounds(e.bounds);
 
           map.markerLayer.setGeoJSON({
-              type: "
-      Feature ",
+              type: "Feature",
               geometry: {
-                  type: "
-      Point ",
+                  type: "Point",
                   coordinates: [e.latlng.lng, e.latlng.lat]
               },
               properties: {
@@ -156,8 +149,9 @@
       map.on('locationerror', function() {
           geolocate.innerHTML = 'position could not be found';
       });
-      </script>
-      <%= javascript_include_tag " application " %>
+    </script>
+
+    <%= javascript_include_tag "application" %>
 
 
   </body>

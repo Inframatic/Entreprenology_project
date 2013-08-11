@@ -1,28 +1,28 @@
 #main {	
 	width: 40%;
 	/*min-height:550px;*/
-	max-height:960px;
+	max-height: 960px;
 	overflow:scroll;
 	margin-left: 1%;
 	margin-right: 3%;
 	float: right;
-	}		
+	}
+
 aside { 
 	padding: 10px;
 	font-style: italic; font-size: 0.9em;
-	background-color:#8AB6BA;
+	background-color: #8AB6BA;
 	float: right;
 	width: 100%;
-	margin-right:2px;
+	margin-right: 2px;
 	min-width: 400px;
 	margin-bottom: 10px;
-
 	}
 
 #proflist{
 	border-bottom-left-radius: 15px;
 	margin-bottom: 4px;
-	background-color:#8AB6BA;
+	background-color: #8AB6BA;
 /*	background-color:#9ED0ED; lighter blue*/
 	min-width: 350px;
 }
@@ -33,23 +33,22 @@ aside {
 
 div img{
 	position: center;
-	margin:0 auto;
+	margin: 0 auto;
 }
 
 #company_info {
-	padding:10px 3px 10px 3px;
-	min-height:500px;
+	padding: 10px 3px 10px 3px;
+	min-height: 500px;
 	width: 55%;
 	float: left;
-	background-color:#8AB6BA;
+	background-color: #8AB6BA;
 	min-width: 350px;
 /*	background-color: gray;*/
         border: 1px solid gray;
-
 }
 
 #filter {
-	width:100%;
+	width: 100%;
 }
 
 #profile_container {
@@ -130,8 +129,6 @@ footer, header, hgroup, menu, nav, section {
 	min-height:600px;
 	} 
 
-
-
 /* Logo H1 */
 header h1 {
 	height: 70px;
@@ -142,7 +139,7 @@ header h1 {
 	/*background: url(../images/demo.gif) 0 0 no-repeat;*/
 	/*text-indent: -9999px;*/
 	}
-		
+
 /* Nav */
 header nav {
 	float: right;
@@ -157,6 +154,7 @@ header nav {
 #skipTo {
 	display: none;
 	}
+
 	#skipTo li {
 		margin: 0 auto;
 		background: white;
@@ -256,8 +254,6 @@ header nav {
   border:2px solid rgba(255, 200, 0, 1);
 }
 
-
-
 .button1b:active:after {
   display:block;
   width:50px;
@@ -277,8 +273,6 @@ header nav {
 }
 
 /*Apply Button*/
-
-
 
 .read-more{
   display:inline-block;

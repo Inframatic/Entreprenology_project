@@ -11,6 +11,6 @@
  *= require_self
  *= require foundation_and_overrides
  *= require startup
- *= require zero_header
+ *= require intern
  *= require_tree .
  */
