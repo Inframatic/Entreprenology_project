@@ -1,29 +1,29 @@
 #main {	
 	width: 40%;
-	/*min-height:550px;*/
 	max-height:960px;
 	overflow:scroll;
 	margin-left: 1%;
 	margin-right: 3%;
 	float: right;
+	/*min-height:550px;*/
+}
 
-	}		
 aside { 
 	padding: 10px;
 	font-style: italic; font-size: 0.9em;
-	background-color:#DD7B61;
+	background-color: #DD7B61;
 	float: right;
 	width: 100%;
-	margin-right:2px;
+	margin-right: 2px;
 	min-width: 400px;
 	margin-bottom: 10px;
 	border-bottom:1px solid gray;
-	}
+}
 
 #proflist{
 	border-bottom-left-radius: 15px;
 	margin-bottom: 4px;
-	background-color:#DD7B61;
+	background-color: #DD7B61;
 /*	background-color:#9ED0ED; lighter blue*/
 	min-width: 350px;
 }
@@ -44,9 +44,8 @@ div img{
 	float: left;
 	background-color: #DD7B61;
 	min-width: 350px;
-/*	background-color: gray;*/
-        border: 1px solid gray;
-
+  border: 1px solid gray;
+  /*	background-color: gray;*/
 }
 
 #filter {
@@ -56,7 +55,7 @@ div img{
 #profile_container {
 	border-left: 40px;
 	padding-bottom: 3%;
-	margin-bottom: :20px;
+	margin-bottom: 20px;
 }
 
 h2 {
@@ -151,15 +150,16 @@ header nav {
 	header nav li {
 		display: inline;
 		margin-left: 15px;
-		}
+	}
 
 #skipTo {
 	display: none;
 	}
+
 	#skipTo li {
 		margin: 0 auto;
-		background: #white;
-		}
+		background-image: asset-url('whitetexture.png');
+	}
 
 /* Banner */			
 #banner {
@@ -170,7 +170,7 @@ header nav {
 
 	#banner img {
 		width: 100%;
-		}
+	}
 
 
 /* Media Queries */
