@@ -17,6 +17,7 @@
 //= require jquery
 //= require jquery_ujs
 
+//= require svtle_script.js
 //#= require foundation/foundation
 //#= require foundation/foundation.alerts
 //#= require foundation/foundation.clearing

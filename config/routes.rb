@@ -9,15 +9,14 @@ Entreprenology::Application.routes.draw do
         resources :internship_contacts, :except => [:index]
       end
     end
-  end
-
-  resources :accounts do
+      resources :accounts do
     resources :favourited_list
+  end
   end
 
 	resources :sessions, :only => [:new, :create, :destroy]
 
-	root :to => 'welcome#index'
+	root :to => 'welcome#show'
   get '*anything' => "welcome#index"
 
 end
