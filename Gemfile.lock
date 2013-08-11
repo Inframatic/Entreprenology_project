@@ -80,7 +80,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     minitest (4.7.5)
-    modernizr-rails (2.6.2.3)
     multi_json (1.7.7)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -147,7 +146,6 @@ DEPENDENCIES
   haml_coffee_assets
   jbuilder (~> 1.2)
   jquery-rails
-  modernizr-rails
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sqlite3

@@ -30,8 +30,6 @@ gem 'execjs'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'modernizr-rails'
-
 # you need this or you get an error
 gem "compass-rails", "~> 2.0.alpha.0"
 
