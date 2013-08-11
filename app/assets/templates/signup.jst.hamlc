@@ -1,0 +1,12 @@
+
+<div id="question-box">
+  <h1>
+    Are you looking for an?
+  </h1>
+  <button ng-click="template='startups/new.jst.hamlc'">Intern</button>
+  <p href="startups/new">Internship</p>
+</div>
+
+<script id="startup-new" type="text/ng-template"></script>
+
+    

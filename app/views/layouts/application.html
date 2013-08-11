@@ -13,45 +13,13 @@
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <%= csrf_meta_tags %>
-
-    <style>
-      body { margin:0; padding:0; }
-      #map { position:absolute; top:0; bottom:0; width:100%; }
-    </style>
   </head>
 
   <body>
-    <style>
-      #geolocate {
-        background: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 158px;
-        margin-left: -80px;
-        z-index: 1000;
-        font: 13px/18px;
-        text-align: center;
-        padding: 10px 0;
-        color: #3C4E5A;
-        display: block;
-        border: 1px solid #BBB;
-        -webkit-border-radius: 3px;
-        border-radius: 3px;
-      }
-
-      #geolocate:hover {
-        background: #ECF5FA;
-      }
-    </style>
-
-    <div id='map'></div>
-    <a href='#' id='geolocate'>Find me</a>
-
     <header>
       <nav id="lightning">
         <figure id="lightning_identifier">
-          <a href="#">Entreprenology</a>
+         <a href="/">Entreprenology</a>
         </figure>
         <ul id="lightning_drop">
           <li class="home">
@@ -64,7 +32,7 @@
             <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say hello</a>
           </li>
           <li class="signup">
-            <a class="login" href="/login">Log in</a>
+            <a class="login" href="./signup">Log in</a>
           </li>
         </ul>
 
@@ -77,80 +45,7 @@
     <div class="large-4 columns"></div>
 
 
-    <!-- JavaScript -->
-    <script type='text/javascript'>
-      var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
-        detectRetina: true,
-        retinaVersion: 'examples.map-zswgei2n'
-        }).setView([40, -74.50], 9);
-
-      var gridLayer = L.mapbox.gridLayer('maptap.map-ljig9nyp');
-      map.addLayer(L.mapbox.tileLayer('maptap.map-ljig9nyp'));
-      map.addLayer(gridLayer);
-      map.addControl(L.mapbox.gridControl(gridLayer));
-      map.addControl(L.mapbox.geocoderControl('maptap.map-ljig9nyp'));
-    </script>
-
-    <script type="text/javascript">
-    $(document).ready(function() {
-      $.ajax({
-      url: 'https://raw.github.com/mapbox/geo-googledocs/master/MapBox.js',
-      dataType: 'jsonp',
-      jsonpCallback: 'grid',
-      success: function(data) {
-        console.log(data);
-      } 
-      });
-    });
-    </script>
-
-
-    <script type='text/javascript'>
-      var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
-      var geolocate = document.getElementById('geolocate');
-
-      // This uses the HTML5 geolocation API, which is available on
-      // most mobile browsers and modern browsers, but not in Internet Explorer
-      if (!navigator.geolocation) {
-          geolocate.innerHTML = 'geolocation is not available';
-      } else {
-          geolocate.onclick = function (e) {
-              e.preventDefault();
-              e.stopPropagation();
-              map.locate();
-          };
-      }
-
-      // Once we've got a position, zoom and center the map
-      // on it, and add a single marker.
-      map.on('locationfound', function(e) {
-          map.fitBounds(e.bounds);
-
-          map.markerLayer.setGeoJSON({
-              type: "Feature",
-              geometry: {
-                  type: "Point",
-                  coordinates: [e.latlng.lng, e.latlng.lat]
-              },
-              properties: {
-                  'marker-color': '#000',
-                  'marker-symbol': 'star-stroked'
-              }
-          });
-
-          // And hide the geolocation button
-          geolocate.parentNode.removeChild(geolocate);
-      });
-
-      // If the user chooses not to allow their location
-      // to be shared, display an error message.
-      map.on('locationerror', function() {
-          geolocate.innerHTML = 'position could not be found';
-      });
-    </script>
-
     <%= javascript_include_tag "application" %>
- 
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   </body>
 </html>
