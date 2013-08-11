@@ -14,7 +14,7 @@
 //= require angular
 //= require angular-resource
 //= require hamlcoffee
-//= require build.outside-adb76dec4615a5ab518fe65da519685a
+//= require zero_header
 //= require jquery
 //= require jquery_ujs
 
@@ -22,6 +22,4 @@
 //= require ./angular/initialize
 //= require_tree ./angular
 //= require_tree ../templates
-
-$(function(){ $(document).foundation() })
 
