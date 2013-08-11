@@ -3,18 +3,20 @@
 @entreprenology.config ($routeProvider, $locationProvider) ->
   $locationProvider.html5Mode(true)
   $routeProvider
-    .when('/signup',            templateUrl: "signup")
-    .when('/startups',          templateUrl: "startups/index", controller: "StartupsController")
-    .when('/startups/new',      templateUrl: "startups/new",   controller: "StartupsController")
-    .when('/startups/:id/edit', templateUrl: "startups/edit",  controller: "StartupsController")
-    .when('/interns',           templateUrl: "interns/index",  controller: "InternsController")
-    .when('/interns/:id/edit',  templateUrl: "interns/edit",   controller: "InternsController")
+    .when('/signup',            template: JST['signup'])
+    .when('/startups',          template: JST["startups/index"], controller: "StartupsController")
+    .when('/startups/new',      template: JST["startups/new"],   controller: "StartupsController")
+    .when('/startups/:id/edit', template: JST["startups/edit"],  controller: "StartupsController")
+    .when('/interns',           template: JST["interns/index"],  controller: "InternsController")
+    .when('/interns/:id/edit',  template: JST["interns/edit"],   controller: "InternsController")
     .otherwise(template: 'This page was not found')
 
-@entreprenology.run ['$window','$templateCache', ($window, $templateCache) ->
-  for name, templateFunction of $window.JST
-    $templateCache.put(name, templateFunction())
-]
+# @entreprenology.run ['$window','$templateCache', ($window, $templateCache) ->
+#   for name, templateFunction of $window.JST
+#     $templateCache.put(name, templateFunction()
+#     )
+# ]
+# /keep this and review later!
 
 # Startup
 @entreprenology.factory 'Startup', ($resource) ->
@@ -33,3 +35,6 @@
   
 @entreprenology.factory 'Intern', ($resource) ->
   $resource "/api/interns/intern_id/edit.json", {update: {method: "PUT"}}
+
+@entreprenology.factory 'Intern', ($resource) ->
+  $resource "/api/interns/new.json", {new: {method: "GET"}}
