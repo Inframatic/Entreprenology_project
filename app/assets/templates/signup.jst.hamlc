@@ -1,11 +1,5 @@
-<div id="wrapper" ng-controller="StartupsController">
-	<div id="question-box">
-		<h1>Are you looking for an?</h2>
-		<button ng-click="template='startups/new.jst.hamlc'">Intern</button>
-		<p href="startups/new">Internship</p>
-	</div>
-	<script type="text/ng-template" id="startup-new">
-  	<div>loaded home</div>
-  </script>
-
+<div id="question-box">
+	<h1>Are you looking for an?</h2>
+	<button ng-click="template='startups/new.jst.hamlc'">Intern</button>
+	<p href="startups/new">Internship</p>
 </div>

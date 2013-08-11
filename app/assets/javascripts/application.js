@@ -17,7 +17,7 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require svtle_script.js
+//= require svtle_script
 //#= require foundation/foundation
 //#= require foundation/foundation.alerts
 //#= require foundation/foundation.clearing
@@ -36,6 +36,7 @@
 //#= require foundation/foundation.abide
 
 // APPLICATION FILES
+//= require_svtle
 //= require ./angular/initialize
 //= require_tree ./angular
 //= require_tree ../templates
