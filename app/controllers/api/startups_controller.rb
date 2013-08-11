@@ -1,9 +1,9 @@
 class Api::StartupsController < Api::BaseController
   
-  def index
+   def index
     @startups = Startup.all
-    respond_with @startups
-  end
+    respond_with(@startups)
+   end
 
 
   def show
@@ -15,6 +15,7 @@ class Api::StartupsController < Api::BaseController
   def new
     @startup = Startup.new
     @startup.build_account(params[:account])
+    respond_with @startup
   end
 
 

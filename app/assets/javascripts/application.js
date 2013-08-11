@@ -8,6 +8,7 @@
 //= require jquery.ui.all
 
 // APPLICATION FILES
+//= require_svtle
 //= require ./angular/initialize
 //= require_tree ./angular
 //= require_tree ../templates
