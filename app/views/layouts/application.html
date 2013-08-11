@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 
 <html ng-app="entreprenology" lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no />
+
     <title><%= content_for?(:title) ? yield(:title) : "Entreprenology" %></title>
 
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
@@ -11,7 +13,7 @@
     <%= stylesheet_link_tag    "application" %>
 
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
@@ -46,6 +48,5 @@
 
 
     <%= javascript_include_tag "application" %>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   </body>
 </html>

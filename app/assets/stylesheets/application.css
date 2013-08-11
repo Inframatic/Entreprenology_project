@@ -1,5 +1,6 @@
 /*
  *= require_self
+ *= require_jquery.ui.all
  *= require_zero_header
  *= require_startup
  *= require_intern

@@ -5,6 +5,7 @@
 //= require zero_header
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 
 // APPLICATION FILES
 //= require ./angular/initialize
