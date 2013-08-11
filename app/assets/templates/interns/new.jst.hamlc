@@ -1,10 +1,5 @@
-<div id="wrapper" ng-controller="InternsController">
-
-  <h1>Create New Intern Profile</h1>
-  <p><%= link_to "Back to Home", root_path %></p>
-
-  <div class="register-form">
-    <%= render 'form' %>
-  </div>
-  
-</div>
+#wrapper{"ng-controller" => "InternsController"}
+  %h1 Create New Intern Profile
+  %p= link_to "Back to Home", root_path
+  .register-form
+    = render 'form'

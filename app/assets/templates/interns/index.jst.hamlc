@@ -1,59 +1,43 @@
-<div id="wrapper" ng-controller="InternsController">
+#wrapper{"ng-controller" => "InternsController"}
+  %header
+    %nav#skipTo
+      %ul
+        %li
+          %a{:href => "#main", :title => "Skip to Main Content"} Skip to Main Content
 
-  <header>
-    <nav id="skipTo">
-      <ul>
-        <li>
-          <a href="#main" title="Skip to Main Content">Skip to Main Content</a>
-        </li>
-      </ul>
-    </nav>
-    <aside>
-      <ul>
-        <section id="filter">
-          <br />
-          <p>Filter by:</p>
-          <input type="text" ng-model="first_name" placeholder="Name"/> 
-          <input type="text" ng-model="city" placeholder="City"/>
-          <input type="text" ng-model="first_name" placeholder="Name"/> 
-          <input type="text" ng-model="country" placeholder="Country"/>
-          <input type="text" ng-model="industry" placeholder="Industry"/> 
-          <input type="text" ng-model="description" placeholder="Keyword"/> 
-          <p></p>
-        </section>
-      </ul>
-    </aside>
+    %aside
+      %ul
+        %section#filter
+          %br/
+          %p Filter by:
+          %input{"ng-model" => "first_name", :placeholder => "Name", :type => "text"}/
+          %input{"ng-model" => "city", :placeholder => "City", :type => "text"}/
+          %input{"ng-model" => "first_name", :placeholder => "Name", :type => "text"}/
+          %input{"ng-model" => "country", :placeholder => "Country", :type => "text"}/
+          %input{"ng-model" => "industry", :placeholder => "Industry", :type => "text"}/
+          %input{"ng-model" => "description", :placeholder => "Keyword", :type => "text"}/
+          %p
 
-    <section id="intern_info">
-      <div ng-show="hovering" >
-        <img src="http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif" />
-        <br />
-        <p></p>
-        <h3>Description:</h3> 
-        <br />
-        {{hoveredIntern.description}}<<br>
-        <p></p>
-        <h2>{{hoveredIntern.email}}</h2>
-
-      </div>
-
-    </section>
-
-  </header> 
-  
-  <section id="main">
-    <ul id="profile_container"> 
-      <li ng-mouseover="showDetails(intern)" id="proflist" ng-repeat="intern in interns |filter:email| filter:first_name| filter:last_name| filter:industry| filter:city| filter:description">
-        <h1>{{intern.first_name}} {{intern.last_name}}</h1>
-        <br />
-        <p></p>
-        {{intern.city}}, {{intern.country}}
-        <br />
-        <h2>{{intern.industry}}</h2>
-        Description: {{intern.description}}
-        <br />
-      </li>
-    </ul>
-  </section>
-  
-</div>
+    %section#intern_info
+      %div{"ng-show" => "hovering"}
+        %img{:src => "http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif"}/
+        %br/
+        %p
+        %h3 Description:
+        %br/
+        <
+        %br/
+        %p
+        %h2 
+        
+    %section#main
+      %ul#profile_container
+        %li#proflist{"ng-mouseover" => "showDetails(intern)", "ng-repeat" => "intern in interns |filter:email| filter:first_name| filter:last_name| filter:industry| filter:city| filter:description"}
+          %h1  
+          %br/
+          %p
+          , 
+          %br/
+          %h2 
+          Description: 
+          %br/
