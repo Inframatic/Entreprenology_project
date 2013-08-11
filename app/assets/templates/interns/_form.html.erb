@@ -1,0 +1,24 @@
+<%= form_for @intern, :html => {data-intern-form => do |f| %>
+  <% if @intern.errors.any? or @intern.account.errors.any? %>
+    <div id="error_explanation">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @intern.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, { :'ng-model' => 'intern.first_name'} %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, { :'ng-model' => 'intern.last_name'} %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br />
+    <%= f.text_area :dob, { :'ng-model' => 'intern.dob'} %>
+  </div>
