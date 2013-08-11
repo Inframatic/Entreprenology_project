@@ -5,148 +5,87 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no />
     <title><%= content_for?(:title) ? yield(:title) : "Entreprenology" %></title>
+    <meta content="A new way to get an internship, with startups" name="Description">
+    <!-- /meta -->
 
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+    <!-- /mapbox API -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script data-turbolinks-track="true" src=
+  "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.outside-adb76dec4615a5ab518fe65da519685a.js"></script>
     <link href=
     "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
     media="all" rel="stylesheet">
-    <%= stylesheet_link_tag    "startups" %>
+    <!-- /zero_header -->
+
+    <%= stylesheet_link_tag    :all %>
+
     <style>
       body { margin:0; padding:0; }
       #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
-
+    <!-- /stylesheets -->
     <%= csrf_meta_tags %>
   </head>
+  <body>
+    <style>
+      #geolocate {
+          background: #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 158px;
+          margin-left: -80px;
+          z-index: 1000;
+          font: 13px/18px;
+          text-align: center;
+          padding: 10px 0;
+          color: #3C4E5A;
+          display: block;
+          border: 1px solid #BBB;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+      }
 
-  
-<body>
-  <style>
-    #geolocate {
-        background: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 158px;
-        margin-left: -80px;
-        z-index: 1000;
-        font: 13px/18px;
-        text-align: center;
-        padding: 10px 0;
-        color: #3C4E5A;
-        display: block;
-        border: 1px solid #BBB;
-        -webkit-border-radius: 3px;
-        border-radius: 3px;
-    }
+      #geolocate:hover {
+          background: #ECF5FA;
+      }
+    </style>
 
-    #geolocate:hover {
-        background: #ECF5FA;
-    }
-  </style>
+    <div id='map'></div>
+    <a href='#' id='geolocate'>Find me</a>
 
-  <div id='map'></div>
-  <a href='#' id='geolocate'>Find me</a>
+    <header>
+      <nav id="lightning">
+        <figure id="lightning_identifier">
+          <a href="#">Entreprenology</a>
+        </figure>
+        <ul id="lightning_drop">
+          <li class="home">
+            <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
+          </li>
+          <li class="twitter">
+            <a class="twitter" href="https://twitter.com/entreprenology" target="_blank">@entreprenology</a>
+          </li>
+          <li class="contact">
+            <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say hello</a>
+          </li>
+          <li class="signup">
+            <a class="login" href="/login">Log in</a>
+          </li>
+        </ul>
 
-  <header>
-    <nav id="lightning">
-      <figure id="lightning_identifier">
-        <a href="#">Entreprenology</a>
-      </figure>
-      <ul id="lightning_drop">
-        <li class="home">
-          <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
-        </li>
-        <li class="twitter">
-          <a class="twitter" href="https://twitter.com/entreprenology" target="_blank">@entreprenology</a>
-        </li>
-        <li class="contact">
-          <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say hello</a>
-        </li>
-        <li class="signup">
-          <a class="login" href="/login">Log in</a>
-        </li>
-      </ul>
+      </nav>
 
-    </nav>
+    </header>
 
-  </header>
-
-  <div class="large-8 columns"><%= yield %></div>
-  <div class="large-4 columns"></div>
+    <div class="large-8 columns"><%= yield %></div>
+    <div class="large-4 columns"></div>
 
 
-
-  <!-- JavaScript -->
-  <script type='text/javascript'>
-    var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
-    var gridLayer = L.mapbox.gridLayer('maptap.map-ljig9nyp');
-    map.addLayer(L.mapbox.tileLayer('maptap.map-ljig9nyp'));
-    map.addLayer(gridLayer);
-    map.addControl(L.mapbox.gridControl(gridLayer));
-    map.addControl(L.mapbox.geocoderControl('maptap.map-ljig9nyp'));
-  </script>
-
-
-  <script type="text/javascript">
-  $(document).ready(function() {
-    $.ajax({
-    url: 'https://raw.github.com/mapbox/geo-googledocs/master/MapBox.js',
-    dataType: 'jsonp',
-    jsonpCallback: 'grid',
-    success: function(data) {
-      console.log(data);
-    } 
-    });
-  });
-  </script>
-
-
-  <script type='text/javascript'>
-    var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
-    var geolocate = document.getElementById('geolocate');
-
-    // This uses the HTML5 geolocation API, which is available on
-    // most mobile browsers and modern browsers, but not in Internet Explorer
-    if (!navigator.geolocation) {
-        geolocate.innerHTML = 'geolocation is not available';
-    } else {
-        geolocate.onclick = function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            map.locate();
-        };
-    }
-
-    // Once we've got a position, zoom and center the map
-    // on it, and add a single marker.
-    map.on('locationfound', function(e) {
-        map.fitBounds(e.bounds);
-
-        map.markerLayer.setGeoJSON({
-            type: "Feature",
-            geometry: {
-                type: "Point",
-                coordinates: [e.latlng.lng, e.latlng.lat]
-            },
-            properties: {
-                'marker-color': '#000',
-                'marker-symbol': 'star-stroked'
-            }
-        });
-
-        // And hide the geolocation button
-        geolocate.parentNode.removeChild(geolocate);
-    });
-
-    // If the user chooses not to allow their location
-    // to be shared, display an error message.
-    map.on('locationerror', function() {
-        geolocate.innerHTML = 'position could not be found';
-    });
-    </script>
-
+    <!-- JavaScript -->
     <%= javascript_include_tag "application" %>
 
 
