@@ -8,7 +8,7 @@
     .when('/startups/:id/edit', templateUrl: "startups/edit",  controller: "StartupsController")
     .when('/interns',           templateUrl: "interns/index",  controller: "InternsController")
     .when('/interns/:id/edit',  templateUrl: "interns/edit",   controller: "InternsController")
-    .otherwise(redirect: '/')
+    .otherwise(template: 'This page was not found')
 
 @entreprenology.run ['$window','$templateCache', ($window, $templateCache) ->
   for name, templateFunction of $window.JST
