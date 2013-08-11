@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html ng-app="entreprenology" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,12 +9,13 @@
     <link href=
     "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
     media="all" rel="stylesheet">
-    <%= stylesheet_link_tag    "startup" %>
+    <%= stylesheet_link_tag    "startups" %>
+
     <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-
-  <body>
+  <body ng-app="entreprenology">
+    <div id="loading">&nbsp;</div>
     <header>
       <nav id="lightning">
         <figure id="lightning_identifier">
