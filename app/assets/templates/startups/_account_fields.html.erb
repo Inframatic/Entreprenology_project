@@ -1,0 +1,28 @@
+<div class="field">
+  <%= f.label :email, "Email" %><br />
+  <%= f.text_field :email, { :'ng-model' => 'startup.email'} %>
+</div>
+<div class="field">
+  <%= f.label :industry, "Industry" %><br />
+  <%= f.text_field :industry, { :'ng-model' => 'startup.industry'} %>
+</div>
+<div class="field">
+  <%= f.label :city, "City" %><br />
+  <%= f.text_field :city, { :'ng-model' => 'startup.city'} %> 
+</div>
+<div class="field">
+  <%= f.label :country, "Country" %><br />
+  <%= f.text_field :country, { :'ng-model' => 'startup.country'} %> 
+</div>
+<div class="field">
+  <%= f.label :description, "Company Description" %><br />
+  <%= f.text_area :description, { :'ng-model' => 'startup.description'} %> 
+</div>
+<div class="field">
+  <%= f.label :password, "Password" %><br />
+  <%= f.password_field :password, { :'ng-model' => 'startup.password'} %>
+</div>
+<div class="field">
+  <%= f.label :password_confirmation, "Confirm Password" %><br />
+  <%= f.password_field :password_confirmation, { :'ng-model' => 'startup.password_confirmation'} %>
+</div>
