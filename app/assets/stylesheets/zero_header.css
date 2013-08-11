@@ -6,7 +6,7 @@ html {
   font-size: 100%;
 }
 
-html,button {
+html, button {
   font-family: sans-serif;
   color: #222;
 }
@@ -37,14 +37,14 @@ a:hover,a:active {
   outline: 0;
 }
 
-ul,ol {
+ul, ol {
   margin: 0;
   padding: 0;
   list-style: none;
   list-style-type: none;
 }
 
-nav ul,nav ol {
+nav ul, nav ol {
   list-style: none;
   list-style-image: none;
   margin: 0;
@@ -63,7 +63,7 @@ body {
   font-family: Helvetica,sans-serif;
 }
 
-a:link,a:visited,a:hover,a:active {
+a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: #000;
 }

@@ -7,7 +7,6 @@
     <title><%= content_for?(:title) ? yield(:title) : "Entreprenology" %></title>
 
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
-    media="all" rel="stylesheet">
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= stylesheet_link_tag    "application" %>
 
@@ -81,13 +80,16 @@
     <!-- JavaScript -->
     <script type='text/javascript'>
       var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
+        detectRetina: true,
+        retinaVersion: 'examples.map-zswgei2n'
+        }).setView([40, -74.50], 9);
+
       var gridLayer = L.mapbox.gridLayer('maptap.map-ljig9nyp');
       map.addLayer(L.mapbox.tileLayer('maptap.map-ljig9nyp'));
       map.addLayer(gridLayer);
       map.addControl(L.mapbox.gridControl(gridLayer));
       map.addControl(L.mapbox.geocoderControl('maptap.map-ljig9nyp'));
     </script>
-
 
     <script type="text/javascript">
     $(document).ready(function() {

@@ -1,4 +1,14 @@
-#main {	
+html { 
+	overflow-y: scroll;
+}
+
+body { 
+	background-image: asset-url('whitetexture.png');
+	color: white;
+	font-family: Tahoma, helvetica, sans-serif;
+}
+
+#main {
 	width: 40%;
 	max-height: 960px;
 	overflow: scroll;
@@ -7,6 +17,16 @@
 	float: right;
 	/*min-height:550px;*/
 }
+
+/* Structure */
+#wrapper {
+	width: 99%;	
+	max-width: 980px;
+	margin: auto;
+	padding: 2%;
+	height: 99%;
+	min-height: 600px;
+} 
 
 aside { 
 	padding: 10px;
@@ -17,24 +37,94 @@ aside {
 	margin-right: 2px;
 	min-width: 400px;
 	margin-bottom: 10px;
-	border-bottom:1px solid gray;
+	border-bottom: 1px solid gray;
 }
 
-#proflist{
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+  display: block;
+}
+
+#banner {
+	float: right;
+	margin-bottom: 15px;
+	width: 75%;
+}
+
+	#banner img {
+		width: 100%;
+	}
+
+/* Logo H1 */
+header h1 {
+	height: 70px;
+	width: 160px;
+	float: left;
+	display: block;
+	color: white;
+	/*background: url(../images/demo.gif) 0 0 no-repeat;*/
+	/*text-indent: -9999px;*/
+}
+
+/* Nav */
+header nav {
+	float: right;
+	margin-top: 40px; 
+	
+	header nav li {
+		display: inline;
+		margin-left: 15px;
+	}
+}
+
+h1 { 
+	margin-bottom: 10px;
+}
+
+h2 {
+	float:right;
+}
+
+p { 
+	margin: 0 0 10px; 
+  line-height: 1.4em; 
+  font-size: 1.2em;
+}
+
+img { 
+	display: block; 
+	margin-bottom: 10px;
+}
+
+div img {
+	position: center;
+	margin:0 auto;
+}
+
+a, img { 
+	outline: none; 
+  border:none; 
+  color: #000; 
+  font-weight: bold; 
+  text-transform: uppercase;
+}
+
+#profile_container {
+	border-left: 40px;
+	padding-bottom: 3%;
+	margin-bottom: 20px;
+}
+
+#proflist {
 	border-bottom-left-radius: 15px;
 	margin-bottom: 4px;
 	background-color: #DD7B61;
-/*	background-color:#9ED0ED; lighter blue*/
 	min-width: 350px;
+	/*	background-color:#9ED0ED; lighter blue*/
 }
 
 #proflist:hover {
 	background-color: gray;
-}
-
-div img{
-	position: center;
-	margin:0 auto;
 }
 
 #intern_info {
@@ -49,127 +139,38 @@ div img{
 }
 
 #filter {
-	width:100%;
+	width: 100%;
 }
 
-#profile_container {
-	border-left: 40px;
-	padding-bottom: 3%;
-	margin-bottom: 20px;
-}
-
-h2 {
-	float:right;
-}
-/* Reset
------------------------------------------------------------- */
-/*li img {
-	float:left;
-	width: 25%;
-}*/
 input {
-	border-radius: 3px
+	border-radius: 3px;
 }
 
 * { 
-	margin: 0; padding: 0; 
-	}
-
-html { 
-	overflow-y: scroll;
-	}
-
-body { 
-	background-image: url('whitetexture.png'); color: white; font-family: Tahoma, helvetica, sans-serif;
-	}
+	margin: 0; 
+	padding: 0; 
+}
 
 ol, ul { 
-	list-style: none; margin: 0;
-	}
+	list-style: none; 
+	margin: 0;
+}
 
 ul li { 
-	margin: 0; padding: 2%;
-	border: solid gray 1px;
-	float:right;
-	margin-bottom: 2px;
-	}
-
-h1 { 
-	margin-bottom: 10px;
-	}	
-
-a, img { 
-	outline: none; border:none; color: #000; font-weight: bold; text-transform: uppercase;
-	}
-
-p { 
-	margin: 0 0 10px; line-height: 1.4em; font-size: 1.2em;
-	}
-
-img { 
-	display: block; margin-bottom: 10px;
-	}
-
-
-
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section { 
-  display: block;
-	}
-	
-/* Structure */
-#wrapper {
-	width: 99%;	
-	max-width: 980px;
-	margin: auto;
+	margin: 0; 
 	padding: 2%;
-	height: 99%;
-	min-height:600px;
-	} 
-
-
-
-/* Logo H1 */
-header h1 {
-	height: 70px;
-	width: 160px;
-	float: left;
-	display: block;
-	color:white;
-	/*background: url(../images/demo.gif) 0 0 no-repeat;*/
-	/*text-indent: -9999px;*/
-	}
-		
-/* Nav */
-header nav {
+	border: solid gray 1px;
 	float: right;
-	margin-top: 40px; 
-	}
-	
-	header nav li {
-		display: inline;
-		margin-left: 15px;
-	}
+	margin-bottom: 2px;
+}
 
 #skipTo {
 	display: none;
-	}
+}
 
 	#skipTo li {
 		margin: 0 auto;
 		background-image: asset-url('whitetexture.png');
-	}
-
-/* Banner */			
-#banner {
-	float: right;
-	margin-bottom: 15px;
-	width: 75%;
-	}
-
-	#banner img {
-		width: 100%;
 	}
 
 
@@ -178,23 +179,25 @@ header nav {
 
 	#skipTo {
 		display: block;
-		}
+	}
 	
 	header nav, #main, aside {
 		float: left;
 		clear: left;
 		margin: 0 0 10px; 
 		width: 100%;
-		}	
+
 		header nav li {
 			margin: 0;
 			background: #efefef;
 			display: block;
 			margin-bottom: 3px;
-			}
+
 			header nav a {
 				display: block;
 				padding: 10px;
 				text-align: center;
-				}			
+			}
+		}
 	}
+}
