@@ -15,6 +15,7 @@ class Api::StartupsController < Api::BaseController
   def new
     @startup = Startup.new
     @startup.build_account(params[:account])
+    respond_with @startup
   end
 
 
