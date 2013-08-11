@@ -10,7 +10,6 @@ gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-# gem 'compass'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -31,8 +30,7 @@ gem 'execjs'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Use Foundation for CSS responsiveness
-gem 'zurb-foundation'
+gem 'modernizr-rails'
 
 # you need this or you get an error
 gem "compass-rails", "~> 2.0.alpha.0"

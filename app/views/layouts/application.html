@@ -4,29 +4,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no />
-     <!-- /meta -->
     <title><%= content_for?(:title) ? yield(:title) : "Entreprenology" %></title>
 
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
-    <!-- /mapbox API -->
-  
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <!-- /typekit -->
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
     media="all" rel="stylesheet">
+    <link href=
+    "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
+    media="all" rel="stylesheet">
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= stylesheet_link_tag    "application" %>
     
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag :modernizr %>
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+    <script type="text/javascript" src="//use.typekit.net/mxw2qch.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+    <%= csrf_meta_tags %>
+
     <style>
       body { margin:0; padding:0; }
       #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
-
-    <link data-turbolinks-track="true" href=
-    "https://dtu1xr3i3b2a1.cloudfront.net/cargo/build.application-ea6f5469422eed78f6a89df6e1177fcf.css"
-    media="all" rel="stylesheet">
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag    "application" %>
-    <!-- /stylesheets -->
-    <%= csrf_meta_tags %>
   </head>
 
   <body>
