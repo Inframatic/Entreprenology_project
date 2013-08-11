@@ -29,6 +29,8 @@ gem 'execjs'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+# Use Jquery UI for CSS/JQuery customizations
 gem 'jquery-ui-rails'
 
 # you need this or you get an error
