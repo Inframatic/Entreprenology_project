@@ -14,7 +14,7 @@
 //= require angular
 //= require angular-resource
 //= require hamlcoffee
-//= require svbtle
+//= require build.outside-adb76dec4615a5ab518fe65da519685a
 //= require jquery
 //= require jquery_ujs
 
