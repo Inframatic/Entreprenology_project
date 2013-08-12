@@ -2,7 +2,7 @@
 
 #button_container {
   width: 8%;
-  min-height: 960px;2
+  min-height: 960px;
   float: right;
 }
 
@@ -118,33 +118,6 @@ header nav li {
   width: 100%;
 }
 
-/* Media Queries */
-@media screen and max-width 480px {
-    
-  #skipTo {
-    display: block;
-  }
-  
-  header nav,#main,aside {
-    float: left;
-    clear: left;
-    margin: 0 0 10px;
-    width: 100%;
-  }
-  
-  header nav li {
-    margin: 0;
-    background: #efefef;
-    display: block;
-    margin-bottom: 3px;
-  }
-  
-  header nav a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-  }
-}
 
 /*start sidebar*/
 aside {
@@ -194,9 +167,9 @@ div.panel {
   height: 120px;
   display: none;
 }
-  background: #FFC0CB;
 
 #panel_1 {
+  background: #FFC0CB;
 }
 
 #panel_2 {
@@ -240,3 +213,147 @@ div.panel {
   z-index: 1;
   line-height: 90px;
 }
+
+
+.fontawesome-user{
+  box-shadow:0 0 0 3px black;
+}
+.fontawesome-film{
+  box-shadow:0 0 0 3px black;
+}
+.fontawesome-trash{
+  box-shadow:0 0 0 3px black;
+}
+.fontawesome-home{
+box-shadow:0 0 0 3px black;
+}
+.fontawesome-lock{
+box-shadow:0 0 0 3px black;
+}
+
+
+
+.fontawesome-user:after{
+  width: 90px;
+  height: 90px;
+  top:-90px;
+  background-image: url('whitetexture.png');
+  transition:transform .2s, opacity .2s;
+}
+.fontawesome-film:after{
+  width: 90px;
+  height: 90px;
+  top:-90px;
+  background-image: url('whitetexture.png');
+  transition:transform .2s, opacity .2s;
+}
+.fontawesome-trash:after{
+  width: 90px;
+  height: 90px;
+  top:-90px;
+  background-image: url('whitetexture.png');
+  transition:transform .2s, opacity .2s;
+}
+.fontawesome-home:after{
+  width: 90px;
+  height: 90px;
+  top:-90px;
+  background-image: url('whitetexture.png');
+  transition:transform .2s, opacity .2s;
+}
+
+.fontawesome-lock:after{
+  width: 90px;
+  height: 90px;
+  top:-90px;
+  background-image: url('whitetexture.png');
+  transition:transform .2s, opacity .2s;
+}
+
+.fontawesome-user:before{
+  color:black;
+  transition:color .2s;
+}
+.fontawesome-film:before{
+  color:black;
+  transition:color .2s;
+}
+.fontawesome-trash:before{
+  color:black;
+  transition:color .2s;
+}
+.fontawesome-home:before{
+  color:black;
+  transition:color .2s;
+}
+.fontawesome-lock:before{
+  color:black;
+  transition:color .2s;
+}
+
+.fontawesome-user:hover:after{
+    transform:scale(1.5);
+    opacity:0;
+}
+.fontawesome-film:hover:after{
+    transform:scale(1.5);
+    opacity:0;
+}
+.fontawesome-trash:hover:after{
+    transform:scale(1.5);
+    opacity:0;
+}
+.fontawesome-home:hover:after{
+    transform:scale(1.5);
+    opacity:0;
+}
+.fontawesome-lock:hover:after{
+    transform:scale(1.5);
+    opacity:0;
+}
+
+.fontawesome-user:hover:before{
+  color:black;
+} 
+.fontawesome-film:hover:before{
+  color:black;
+} 
+.fontawesome-trash:hover:before{
+  color:black;
+}
+.fontawesome-lock:hover:before{
+  color:black;
+} 
+.fontawesome-home:hover:before{
+  color:black;
+} 
+
+
+/* Media Queries */
+@media screen and (max-width 480px) {
+    
+  #skipTo {
+    display: block;
+  }
+  
+  header nav,#main,aside {
+    float: left;
+    clear: left;
+    margin: 0 0 10px;
+    width: 100%;
+  }
+  
+  header nav li {
+    margin: 0;
+    background: #efefef;
+    display: block;
+    margin-bottom: 3px;
+  }
+  
+  header nav a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
