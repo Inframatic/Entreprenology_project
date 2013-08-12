@@ -19,67 +19,89 @@
       body { margin:0; padding:0; }
       #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
-    <!-- /required for mapbox -->
+    <!-- required for mapbox -->
 
     <link rel="stylesheet" type="text/css" href="http://weloveiconfonts.com/api/?family=fontawesome">
-    <!-- required for pageslide -->
+    <!-- weloveiconfonts used for pageslide -->
 
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-      <!-- /Jquery required for zero_header & pageslide! -->
-   
+    <!-- /required for mapbox -->
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <!-- /end pageslide polyfill -->
+    <!-- polyfill required for pageslide support in old browsers-->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <!-- jquery required for zero_header & pageslide -->
     <script src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+    <!-- jqueryrotate required for pageslide -->
     <%= csrf_meta_tags %>
   </head>
 
 
   <body>
-    <header>
-      <nav id="lightning">
-        <figure id="lightning_identifier">
-          <a href="/"></a>
-        </figure>
-        <ul id="lightning_drop">
-          <li class="home">
-            <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
-          </li>
-          <li class="twitter">
-            <a class="twitter" href="https://twitter.com/entreprenology" target="_blank">@entreprenology</a>
-          </li>
-          <li class="contact">
-            <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say hello</a>
-          </li>
-          <li class="signup">
-            <a class="login" href="/signup">Log in</a>
-          </li>
-        </ul>
+    <div id="wrapper">
+      <header>
+        <nav id="lightning">
+          <figure id="lightning_identifier">
+            <a href="/"></a>
+          </figure>
+          <ul id="lightning_drop">
+            <li class="home">
+              <a class="home" href="/" style="color: #fff">ENTREPRENOLOGY</a>
+            </li>
+            <li class="twitter">
+              <a class="twitter" href="https://twitter.com/entreprenology" target="_blank">@entreprenology</a>
+            </li>
+            <li class="contact">
+              <a class="contact" href="mailto:contact@entreprenolo.gy?subject=hi">Say hello</a>
+            </li>
+            <li class="signup">
+              <a class="login" href="/signup">Log in</a>
+            </li>
+          </ul>
 
-      </nav>
+        </nav>
 
-    </header>
+      </header>
 
+      <div id="wrapper">
+        <aside>
+          <div class="slider_div">
+            <div class="slider_head" id="flip_1">
+              <p>Filters</p>
+            </div>
 
-    <div class="large-8 columns"><%= yield %></div>
-    <div class="large-4 columns"></div>
+            <div class="panel" id="panel_1">
+              <p>Holy smokes batman</p>
+            </div>
 
+            <div class="slider_div">
+              <div class="slider_head" id="flip_2">
+                <p>Applications</p>
+              </div>
+
+              <div class="panel" id="panel_2">
+                <p>These are a couple applications</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div id="toggleaside">
+          <div id="friendlycircle">
+            <div id="friendlyarrow"></div>
+          </div>
+        </div>
+
+        <%= yield %>
+
+      </div>
+
+    </div>
 
     <!-- JavaScript -->
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $(".slider_head").click(function() {
-          $(this).siblings(".panel").slideToggle("fast");
-        });
-        $('#friendlycircle').click(function() {
-          $('aside').toggle("slide");
-          $('#friendlycircle').rotate(180);
-        });
-    });
-    </script>
-    <!-- /pageslide -->
     <%= javascript_include_tag "application" %>
 
 
