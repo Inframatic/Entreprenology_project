@@ -11,8 +11,16 @@
 
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
     <!-- /required for mapbox -->
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= stylesheet_link_tag "application" %>
+
+     <link rel="stylesheet" type="text/css" href="http://weloveiconfonts.com/api/?family=fontawesome">
+    <!-- weloveiconfonts used for pageslide -->
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- polyfill required for pageslide support in old browsers-->
 
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
     <!-- /required for mapbox -->
@@ -52,6 +60,33 @@
         </nav>
 
       </header>
+
+       <div id="circle-slider-container">
+        <aside id="slider-container">
+          <div class="slider_div">
+            <div class="slider_head" id="flip_1">
+              <p>Filters</p>
+            </div>
+            <div class="panel" id="panel_1">
+              <p>Holy smokes batman</p>
+            </div>
+            <div class="slider_div">
+              <div class="slider_head" id="flip_2">
+                <p>Applications</p>
+              </div>
+              <div class="panel" id="panel_2">
+                <p>These are a couple applications</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div id="toggleaside">
+          <div id="friendlycircle">
+            <div id="friendlyarrow"></div>
+          </div>
+        </div>
+      </div>
 
       <section id="main"><%= yield %></section>
 

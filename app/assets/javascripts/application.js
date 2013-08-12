@@ -3,7 +3,7 @@
 //= require angular-resource
 //= require hamlcoffee
 //= require zero_header
-// require pageslide
+//= require pageslide
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
