@@ -1,7 +1,3 @@
-nav {
-  display: block;
-}
-
 html {
   font-size: 100%;
 }
@@ -9,59 +5,6 @@ html {
 html, button {
   font-family: sans-serif;
   color: #222;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-a {
-  color: #00e;
-}
-
-a:visited {
-  color: #551a8b;
-}
-
-a:hover {
-  color: #06e;
-}
-
-a:focus {
-  outline: 0;
-}
-
-a:hover,a:active {
-  outline: 0;
-}
-
-ul, ol {
-  padding: 0;
-  list-style-type: none;
-}
-
-nav ul, nav ol {
-  list-style: none;
-  list-style-image: none;
-  margin: 0;
-  padding: 0;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-figure {
-  margin: 0;
-}
-
-a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-  color: #000;
 }
 
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
@@ -99,6 +42,63 @@ h6 {
   font-size: 16px;
   font-weight: 600;
   color: #555;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+nav {
+  display: block;
+}
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: #00e;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:focus {
+  outline: 0;
+}
+
+a:hover,a:active {
+  outline: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #000;
 }
 
 a.buttonize {

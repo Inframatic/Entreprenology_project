@@ -1,31 +1,31 @@
-/*main css ???*/
-
-#button_container {
-  width: 8%;
-  min-height: 960px;
-  float: right;
-}
-
 body {
   background: #fff;
   font-size: 13px;
   color: #666;
 }
 
-ul li {
-  padding: 0;
+article, #slider-container, details, figcaption, figure, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+header h1 {
+  color: #000;
 }
 
 h1 {
   color: #111;
 }
 
+ul li {
+  padding: 0;
+}
+
 a,img {
   font-weight: 700;
 }
 
-article,#slider-container ,details,figcaption,figure,header,hgroup,menu,nav,section {
-  display: block;
+#banner {
+  width: 100%;
 }
 
 #circle-slider-container {
@@ -35,25 +35,6 @@ article,#slider-container ,details,figcaption,figure,header,hgroup,menu,nav,sect
   padding: 2%;
 }
 
-/* Logo H1 */
-header h1 {
-  color: #000;
-}
-
-#skipTo {
-  display: none;
-}
-
-#skipTo li {
-  background: #b1fffc;
-}
-
-/* Banner */
-#banner {
-  width: 100%;
-}
-
-/*start sidebar*/
 #slider-container
  {
   width: 15%;
@@ -109,9 +90,22 @@ div.panel {
 #panel_2 {
   background: #FF0;
 }
-/*/end sidebar*/
+
+#skipTo {
+  display: none;
+}
+
+#skipTo li {
+  background: #b1fffc;
+}
 
 /*/start buttons*/
+
+#button_container {
+  width: 8%;
+  min-height: 960px;
+  float: right;
+}
 .icon {
   height: 1000px;
   width: 100%;
