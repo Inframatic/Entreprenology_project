@@ -1,33 +1,244 @@
-/*side bar start*/
+/*sidebar css*/
 
-#sidebar {
-  background-color: #1E1F1F;
-  position:absolute;
-  float: left;
-  margin-top: 130px;
-  width: 250px;
-  min-height: 100%;
-  opacity: .95;
-  -moz-border-radius: 10px;
-  webkit-border-radius: 10px;
-  border-radius:10px;
-  border-top-left-radius: 0px;
-  box-shadow: 2.5px 2.5px 3px;
+#button_container {
+    width: 8%;
+    min-height: 960px;2
+    float: right;
 }
 
-#toggle {
-  float: right;
-  position: relative;
-  top: 50%;
-  right: -19px;
-  width: 20px;
-  height: 20px;
-  background-color: #2C2E2E;
-  border: 2px solid #ecf0f1;
-  border-radius: 20px;
-  text-align: center;
-  padding: 5px;
-  box-shadow: 1px 5px 20px #1E1F1F inset;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-/*sidebar end*/
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background: #fff;
+    font-size: 13px;
+    color: #666;
+    font-family: Arial, helvetica, sans-serif;
+}
+
+ol,ul {
+    list-style: none;
+    margin: 0;
+}
+
+ul li {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+a,img {
+    outline: none;
+    border: none;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0 0 10px;
+    line-height: 1.4em;
+    font-size: 1.2em;
+}
+
+img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+aside {
+    font-style: italic;
+    font-size: .9em;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+/* Structure */
+#wrapper {
+    width: 99%;
+/*  max-width: 1220px;*/
+    margin: auto;
+    padding: 2%;
+}
+
+#main {
+    width: 60%;
+    margin-right: 5%;
+    float: left;
+}
+
+/* Logo H1 */
+header h1 {
+    height: 70px;
+    width: 160px;
+    float: left;
+    display: block;
+    color: #000;
+/*background: url(../images/demo.gif) 0 0 no-repeat;*/
+/*text-indent: -9999px;*/
+}
+
+/* Nav */
+header nav {
+    float: right;
+    margin-top: 40px;
+}
+
+header nav li {
+    display: inline;
+    margin-left: 15px;
+}
+
+#skipTo {
+    display: none;
+}
+
+#skipTo li {
+    background: #b1fffc;
+}
+
+/* Banner */
+#banner {
+    float: left;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#banner img {
+    width: 100%;
+}
+
+/* Media Queries */
+@media screen and max-width 480px {
+    #skipTo {
+        display: block;
+    }
+    
+    header nav,#main,aside {
+        float: left;
+        clear: left;
+        margin: 0 0 10px;
+        width: 100%;
+    }
+    
+    header nav li {
+        margin: 0;
+        background: #efefef;
+        display: block;
+        margin-bottom: 3px;
+    }
+    
+    header nav a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+
+}
+
+/*Slidersidebar*/
+aside {
+    width: 40%;
+    min-height: 960px;
+    float: left;
+    background-image: url(whitetexture.png);
+}
+
+#toggleaside {
+    width: 60px;
+    min-height: 960px;
+    float: left;
+    background-color: gray;
+    opacity: .6;
+    position: relative;
+}
+
+#friendlycircle {
+    color: #000;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #FFF;
+    margin: 0 auto;
+    vertical-align: middle;
+    border: 1px solid gray;
+    position: absolute;
+    top: 45%;
+    left: 7%;
+}
+
+#friendlyarrow {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+}
+
+div.panel,div.slider_head {
+    margin: 0;
+    text-align: center;
+    background: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+div.panel {
+    height: 120px;
+    display: none;
+}
+
+#panel_1 {
+    background: #FFC0CB;
+}
+
+#panel_2 {
+    background: #FF0;
+}
+
+/*end sidebar*/
+/*start buttons*/
+.icon {
+    height: 1000px;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.button {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:after {
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    content: '';
+    box-sizing: content-box;
+    backface-visibility: hidden;
+}
+
+.button:before {
+    position: relative;
+    display: block;
+    font-family: FontAwesome, sans-serif;
+    font-size: 2.5rem;
+    z-index: 1;
+    line-height: 90px;
+}
