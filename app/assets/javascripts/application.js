@@ -7,7 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require jquery_rotate
 
 // APPLICATION FILES
 //= require ./angular/initialize

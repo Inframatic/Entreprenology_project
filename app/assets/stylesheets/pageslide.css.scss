@@ -56,18 +56,18 @@ img {
   margin-bottom: 10px;
 }
 
-aside {
+#slider-container {
   font-style: italic;
   font-size: .9em;
 }
 
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+article,#slider-container ,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
   display: block;
 }
 
-#wrapper {
-  width: 99%;
-/*  max-width: 1220px;*/
+#circle-slider-container {
+  width: 99%; 
+    max-width: 1220px;
   margin: auto;
   padding: 2%;
 }
@@ -120,40 +120,37 @@ header nav li {
 
 
 /*start sidebar*/
-aside {
-  width: 40%;
-  min-height: 960px;
-  float: left;
-   width: 60px;
-  min-height: 960px;
+#slider-container
+ {
+  width: 15%;
+  min-height: 400px;
   float: left;
   background-color: gray;
   opacity: .6;
   position: relative;
- background-image: url(whitetexture.png);
 }
 
 #toggleaside {
-}
 
-#friendlycircle {
-  color: #000;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #FFF;
-  margin: 0 auto;
-  vertical-align: middle;
-  border: 1px solid gray;
-  position: absolute;
-  top: 45%;
-  left: 7%;
-}
+  #friendlycircle {
+    color: #000;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #FFF;
+    margin: 0 auto;
+    vertical-align: middle;
+    border: 1px solid gray;
+    position: absolute;
+    top: 45%;
+    left: 7%;
 
-#friendlyarrow {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
+    #friendlyarrow {
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+    }
+  }
 }
 
 div.panel,div.slider_head {
@@ -336,7 +333,7 @@ box-shadow:0 0 0 3px black;
     display: block;
   }
   
-  header nav,#main,aside {
+  header nav,#main, #slider-container {
     float: left;
     clear: left;
     margin: 0 0 10px;
