@@ -24,16 +24,12 @@ a,img {
   font-weight: 700;
 }
 
-#slider-container {
-  font-style: italic;
-  font-size: .9em;
-}
-
-article,#slider-container ,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+article,#slider-container ,details,figcaption,figure,header,hgroup,menu,nav,section {
   display: block;
 }
 
 #circle-slider-container {
+  display:none;
   width: 15%; 
   max-width: 200px;
   padding: 2%;
@@ -63,9 +59,12 @@ header h1 {
   width: 15%;
   min-height: 400px;
   float: left;
+  margin-top:45%;
   background-color: gray;
-  opacity: .6;
+  opacity: .9;
   position: relative;
+  font-style: italic;
+  font-size: .9em;
 }
 
 #toggleaside {
@@ -94,7 +93,7 @@ header h1 {
 div.panel,div.slider_head {
   margin: 0;
   text-align: center;
-  background: #e5eecc;
+  background: white;
   border: solid 1px #c3c3c3;
 }
 
@@ -104,7 +103,7 @@ div.panel {
 }
 
 #panel_1 {
-  background: #FFC0CB;
+  background: white;
 }
 
 #panel_2 {
