@@ -10,4 +10,5 @@
 // APPLICATION FILES
 //= require ./angular/initialize
 //= require_tree ./angular
+//= require ./respond
 //= require_tree ../templates

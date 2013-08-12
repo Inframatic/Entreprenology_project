@@ -2,6 +2,7 @@
  *= require_self
  *= require_jquery.ui.all
  *= require_zero_header
+ *= require_sidebar
  *= require_startup
  *= require_intern
  *= require_tree .
