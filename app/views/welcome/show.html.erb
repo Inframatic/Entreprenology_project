@@ -97,4 +97,12 @@ $(document).ready(function() {
   });
 </script>
 
+<script type='text/javascript'>
+  var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
+    detectRetina: true,
+    retinaVersion: 'maptap.map-ljig9nyp'
+    }).setView([40, -74.50], 9);
+</script>
+
 <%= javascript_include_tag "application" %>
+

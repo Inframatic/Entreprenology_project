@@ -1,7 +1,7 @@
 == Entreprenology
 
-.. is: 
+is:
 
 * a web app that makes it easy to ##find internships with startups.
 
-The app is currently ###not MVP
+* !yet MVP
