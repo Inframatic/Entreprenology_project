@@ -1,16 +1,6 @@
+<!-- Map Landing Page -->
+<!-- **************** -->
 <style>
-  body { 
-    margin:0; 
-    padding:0; 
-  }
-
-  #map { 
-    position:absolute; 
-    top:0; 
-    bottom:0; 
-    width:100%; 
-    z-index: -1; 
-  }
 
   #geolocate {
     background: #fff;
@@ -35,17 +25,12 @@
   }
 </style>
 
-<p>Welcome to Entreprenology</p>
-
 <div id='map'></div>
 <a href='#' id='geolocate'>Find me</a>
 
 <!-- JavaScript -->
 <script type='text/javascript'>
-  var map = L.mapbox.map('map', 'maptap.map-ljig9nyp');
-    detectRetina: true,
-    retinaVersion: 'examples.map-zswgei2n'
-    }).setView([40, -74.50], 9);
+  var map = L.mapbox.map('map', 'maptap.map-ljig9nyp')
 
   var gridLayer = L.mapbox.gridLayer('maptap.map-ljig9nyp');
   map.addLayer(L.mapbox.tileLayer('maptap.map-ljig9nyp'));
@@ -111,3 +96,5 @@ $(document).ready(function() {
       geolocate.innerHTML = 'position could not be found';
   });
 </script>
+
+<%= javascript_include_tag "application" %>
