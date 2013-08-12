@@ -12,7 +12,7 @@
         %input{"ng-model" => "company_name", :placeholder => "Company Name", :type => "text"}/
         %input{"ng-model" => "industry", :placeholder => "Industry", :type => "text"}/
         %input{"ng-model" => "description", :placeholder => "Keyword", :type => "text"}/
-    %section#company_info
+    %section{:class => "info-box", :id => "company_info"}
       %div{"ng-show" => "hovering"}
         %a.read-more.alt2{:href => "#"}
           %span >

@@ -18,7 +18,7 @@
           %input{"ng-model" => "description", :placeholder => "Keyword", :type => "text"}/
           %p
 
-    %section#intern_info
+    %section{:class => "info-box", :id => "intern_info"}
       %div{"ng-show" => "hovering"}
         %img{:src => "http://www.corporatetraveller.ca/assets/images/profile-placeholder.gif"}/
         %br/

@@ -6,54 +6,22 @@
   float: right;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  overflow-y: scroll;
-}
-
 body {
   background: #fff;
   font-size: 13px;
   color: #666;
-  font-family: Arial, helvetica, sans-serif;
-}
-
-ol,ul {
-  list-style: none;
-  margin: 0;
 }
 
 ul li {
-  margin: 0;
   padding: 0;
 }
 
 h1 {
-  margin-bottom: 10px;
   color: #111;
 }
 
 a,img {
-  outline: none;
-  border: none;
-  color: #000;
   font-weight: 700;
-  text-transform: uppercase;
-}
-
-p {
-  margin: 0 0 10px;
-  line-height: 1.4em;
-  font-size: 1.2em;
-}
-
-img {
-  display: block;
-  margin-bottom: 10px;
 }
 
 #slider-container {
@@ -66,9 +34,8 @@ article,#slider-container ,details,figcaption,figure,footer,header,hgroup,menu,n
 }
 
 #circle-slider-container {
-  width: 99%; 
-    max-width: 1220px;
-  margin: auto;
+  width: 15%; 
+  max-width: 200px;
   padding: 2%;
 }
 
@@ -80,23 +47,7 @@ article,#slider-container ,details,figcaption,figure,footer,header,hgroup,menu,n
 
 /* Logo H1 */
 header h1 {
-  height: 70px;
-  width: 160px;
-  float: left;
-  display: block;
   color: #000;
-  /*background: url(../images/demo.gif) 0 0 no-repeat;*/
-  /*text-indent: -9999px;*/
-}
-
-header nav {
-  float: right;
-  margin-top: 40px;
-}
-
-header nav li {
-  display: inline;
-  margin-left: 15px;
 }
 
 #skipTo {
@@ -109,15 +60,8 @@ header nav li {
 
 /* Banner */
 #banner {
-  float: left;
-  margin-bottom: 15px;
   width: 100%;
 }
-
-#banner img {
-  width: 100%;
-}
-
 
 /*start sidebar*/
 #slider-container
@@ -210,147 +154,3 @@ div.panel {
   z-index: 1;
   line-height: 90px;
 }
-
-
-.fontawesome-user{
-  box-shadow:0 0 0 3px black;
-}
-.fontawesome-film{
-  box-shadow:0 0 0 3px black;
-}
-.fontawesome-trash{
-  box-shadow:0 0 0 3px black;
-}
-.fontawesome-home{
-box-shadow:0 0 0 3px black;
-}
-.fontawesome-lock{
-box-shadow:0 0 0 3px black;
-}
-
-
-
-.fontawesome-user:after{
-  width: 90px;
-  height: 90px;
-  top:-90px;
-  background-image: url('whitetexture.png');
-  transition:transform .2s, opacity .2s;
-}
-.fontawesome-film:after{
-  width: 90px;
-  height: 90px;
-  top:-90px;
-  background-image: url('whitetexture.png');
-  transition:transform .2s, opacity .2s;
-}
-.fontawesome-trash:after{
-  width: 90px;
-  height: 90px;
-  top:-90px;
-  background-image: url('whitetexture.png');
-  transition:transform .2s, opacity .2s;
-}
-.fontawesome-home:after{
-  width: 90px;
-  height: 90px;
-  top:-90px;
-  background-image: url('whitetexture.png');
-  transition:transform .2s, opacity .2s;
-}
-
-.fontawesome-lock:after{
-  width: 90px;
-  height: 90px;
-  top:-90px;
-  background-image: url('whitetexture.png');
-  transition:transform .2s, opacity .2s;
-}
-
-.fontawesome-user:before{
-  color:black;
-  transition:color .2s;
-}
-.fontawesome-film:before{
-  color:black;
-  transition:color .2s;
-}
-.fontawesome-trash:before{
-  color:black;
-  transition:color .2s;
-}
-.fontawesome-home:before{
-  color:black;
-  transition:color .2s;
-}
-.fontawesome-lock:before{
-  color:black;
-  transition:color .2s;
-}
-
-.fontawesome-user:hover:after{
-    transform:scale(1.5);
-    opacity:0;
-}
-.fontawesome-film:hover:after{
-    transform:scale(1.5);
-    opacity:0;
-}
-.fontawesome-trash:hover:after{
-    transform:scale(1.5);
-    opacity:0;
-}
-.fontawesome-home:hover:after{
-    transform:scale(1.5);
-    opacity:0;
-}
-.fontawesome-lock:hover:after{
-    transform:scale(1.5);
-    opacity:0;
-}
-
-.fontawesome-user:hover:before{
-  color:black;
-} 
-.fontawesome-film:hover:before{
-  color:black;
-} 
-.fontawesome-trash:hover:before{
-  color:black;
-}
-.fontawesome-lock:hover:before{
-  color:black;
-} 
-.fontawesome-home:hover:before{
-  color:black;
-} 
-
-
-/* Media Queries */
-@media screen and (max-width 480px) {
-    
-  #skipTo {
-    display: block;
-  }
-  
-  header nav,#main, #slider-container {
-    float: left;
-    clear: left;
-    margin: 0 0 10px;
-    width: 100%;
-  }
-  
-  header nav li {
-    margin: 0;
-    background: #efefef;
-    display: block;
-    margin-bottom: 3px;
-  }
-  
-  header nav a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-  }
-}
-
