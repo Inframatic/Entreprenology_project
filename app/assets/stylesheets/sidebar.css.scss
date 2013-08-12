@@ -1,0 +1,33 @@
+/*side bar start*/
+
+#sidebar {
+  background-color: #1E1F1F;
+  position:absolute;
+  float: left;
+  margin-top: 130px;
+  width: 250px;
+  min-height: 100%;
+  opacity: .95;
+  -moz-border-radius: 10px;
+  webkit-border-radius: 10px;
+  border-radius:10px;
+  border-top-left-radius: 0px;
+  box-shadow: 2.5px 2.5px 3px;
+}
+
+#toggle {
+  float: right;
+  position: relative;
+  top: 50%;
+  right: -19px;
+  width: 20px;
+  height: 20px;
+  background-color: #2C2E2E;
+  border: 2px solid #ecf0f1;
+  border-radius: 20px;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 1px 5px 20px #1E1F1F inset;
+}
+
+/*sidebar end*/
