@@ -1,14 +1,12 @@
-class Api::InternsController < Api::BaseController
+class InternsController < ApplicationController
 
   def index
     @interns = Intern.all
-    respond_with @interns
   end
 
 
   def show
     @intern = Intern.find(params[:id])
-    respond_with(@intern)
   end
 
 

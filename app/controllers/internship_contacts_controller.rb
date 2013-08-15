@@ -1,8 +1,7 @@
-class Api::InternshipContactsController < Api::BaseController
+class InternshipContactsController < ApplicationController
 
   def show
     @internship_contact = InternshipContact.find(params[:id])
-    respond_with(@internship_contact)
   end
 
 

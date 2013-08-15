@@ -1,21 +1,18 @@
-class Api::StartupsController < Api::BaseController
+class StartupsController < ApplicationController
   
    def index
     @startups = Startup.all
-    respond_with(@startups)
    end
 
 
   def show
     @startup = Startup.find(params[:id])
-    respond_with @startup
   end
 
 
   def new
     @startup = Startup.new
     @startup.build_account(params[:account])
-    respond_with @startup
   end
 
 
